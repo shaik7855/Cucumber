@@ -62,7 +62,8 @@ public class MTMTest extends Base{
 		
 		wait.until(ExpectedConditions.elementToBeClickable(lo.btnYes()));
 		action.moveToElement(lo.btnYes()).click().build().perform();
-		logger.info("Clicked on Sign in button");
+		logger.info("Clicked on yes button");
+		logger.info("Application is successfully opened");
 		
 		
     }
