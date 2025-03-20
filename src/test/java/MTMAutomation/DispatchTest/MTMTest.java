@@ -65,6 +65,8 @@ public class MTMTest extends Base{
 		logger.info("Clicked on yes button");
 		logger.info("Application is successfully opened");
 		
-		
+		driver.findElement(By.xpath("//a[text()='Dispatch']")).click();
+		logger.info("Redirected to Dispatch Page");
+		Thread.sleep(3000);
     }
 }
