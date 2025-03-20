@@ -22,4 +22,9 @@ public class ReadConfig {
 	public String getProperty(String propertyName) {
 		return this.pro.getProperty(propertyName);
 	}
+//	public String getApplicationURL()
+//	{
+//	String url=pro.getProperty("baseURL");
+//	return url;
+//	}
 }
