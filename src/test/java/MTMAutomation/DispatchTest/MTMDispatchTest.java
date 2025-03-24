@@ -13,12 +13,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import MTMAutomation.DispatchTest.Locators.Locators;
+import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
 import MTMAutomation.DispatchTest.PageObjects.LoginObjects;
 import MTMAutomation.DispatchTest.Utilities.Base;
 /**
  * Unit test for simple App.
  */
-public class MTMTest extends Base{
+public class MTMDispatchTest extends Base
+{
 	LoginObjects lo;
 	WebDriverWait wait;
 	Actions action;
@@ -29,6 +32,7 @@ public class MTMTest extends Base{
         wait = new WebDriverWait(driver, Duration.ofSeconds(60));  
         action = new Actions(driver);
         driver.navigate().to(baseURL);
+        verifyUserLogin();
     }
 @Test()
 	public void verifyUserLogin() throws IOException, InterruptedException
@@ -63,8 +67,26 @@ public class MTMTest extends Base{
 		wait.until(ExpectedConditions.elementToBeClickable(lo.btnYes()));
 		action.moveToElement(lo.btnYes()).click().build().perform();
 		logger.info("Clicked on yes button");
-		logger.info("Application is successfully opened");
-		
-		
+		logger.info("Application is successfully opened");	
+	
     }
+	@Test
+	public void navigationBetweenTabs() throws InterruptedException
+	{
+		HomePageObjects homePageObjects = new HomePageObjects(driver);
+		
+		homePageObjects.clickOnDispatchTab();
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL , "Dispatch tab URL is incorrect!");
+		logger.info("Successfully navigated to Dispatch tab");
+		
+		homePageObjects.clickOnLyftTab();
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.LYFT_URL, "Lyft tab URL is incorrect!");
+		logger.info("Successfully navigated to Lyft tab");
+		
+		homePageObjects.clickOnOlosTab();
+		Thread.sleep(2000);
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.OLOS_URL, "Olos tab URL is incorrect!");
+		logger.info("Successfully navigated to Olos tab");
+	}
+	
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-20T16:38:27 IST" name="Default suite" finished-at="2025-03-20T16:39:54 IST" duration-ms="87450">
+  <suite started-at="2025-03-24T16:25:22 IST" name="Default suite" finished-at="2025-03-24T16:26:31 IST" duration-ms="68875">
     <groups>
     </groups>
-    <test started-at="2025-03-20T16:38:27 IST" name="Default test" finished-at="2025-03-20T16:39:54 IST" duration-ms="87450">
-      <class name="MTMAutomation.DispatchTest.MTMTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:MTMAutomation.DispatchTest.MTMTest@58fe0499]" started-at="2025-03-20T16:38:27 IST" name="setup" finished-at="2025-03-20T16:38:30 IST" duration-ms="2788" status="PASS">
+    <test started-at="2025-03-24T16:25:22 IST" name="Default test" finished-at="2025-03-24T16:26:31 IST" duration-ms="68875">
+      <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@27eedb64]" started-at="2025-03-24T16:25:22 IST" name="setup" finished-at="2025-03-24T16:25:25 IST" duration-ms="3183" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,19 +18,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:MTMAutomation.DispatchTest.MTMTest@58fe0499]" started-at="2025-03-20T16:38:30 IST" name="setup" finished-at="2025-03-20T16:39:36 IST" duration-ms="65848" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@27eedb64]" started-at="2025-03-24T16:25:25 IST" name="setup" finished-at="2025-03-24T16:26:20 IST" duration-ms="54858" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyUserLogin()[pri:0, instance:MTMAutomation.DispatchTest.MTMTest@58fe0499]" started-at="2025-03-20T16:39:36 IST" name="verifyUserLogin" finished-at="2025-03-20T16:39:54 IST" duration-ms="18129" status="PASS">
+        <test-method signature="navigationBetweenTabs()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@27eedb64]" started-at="2025-03-24T16:26:20 IST" name="navigationBetweenTabs" finished-at="2025-03-24T16:26:29 IST" duration-ms="8532" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:MTMAutomation.DispatchTest.MTMTest@58fe0499]" started-at="2025-03-20T16:39:54 IST" name="tearDown" finished-at="2025-03-20T16:39:54 IST" duration-ms="650" status="PASS">
+        </test-method> <!-- navigationBetweenTabs -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@27eedb64]" started-at="2025-03-24T16:26:29 IST" name="tearDown" finished-at="2025-03-24T16:26:31 IST" duration-ms="2216" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- MTMAutomation.DispatchTest.MTMTest -->
+      </class> <!-- MTMAutomation.DispatchTest.MTMDispatchTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
