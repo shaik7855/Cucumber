@@ -13,22 +13,26 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
 import MTMAutomation.DispatchTest.PageObjects.LoginObjects;
 import MTMAutomation.DispatchTest.Utilities.Base;
 /**
  * Unit test for simple App.
  */
-public class MTMTest extends Base{
+public class MTMTest extends Base
+{
 	LoginObjects lo;
 	WebDriverWait wait;
 	Actions action;
-	@BeforeMethod(alwaysRun=true)
+	
+@BeforeMethod(alwaysRun=true)
     public void setup() throws InterruptedException, IOException
     {
     	lo = new LoginObjects(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(60));  
         action = new Actions(driver);
         driver.navigate().to(baseURL);
+        verifyUserLogin();
     }
 @Test()
 	public void verifyUserLogin() throws IOException, InterruptedException
@@ -64,7 +68,20 @@ public class MTMTest extends Base{
 		action.moveToElement(lo.btnYes()).click().build().perform();
 		logger.info("Clicked on yes button");
 		logger.info("Application is successfully opened");
-		
-		
+	
     }
+	
+@Test
+public void verifyTabsOnHomePage()
+	{	
+		HomePageObjects homePageObjects  = new HomePageObjects(driver);
+	
+		Assert.assertTrue(homePageObjects.dispatchTabVisibility() , "Dispatch Tab is NOT visible"  );
+		System.out.println("Dispatch tab is visible");
+		Assert.assertTrue(homePageObjects.lyftTabTabVisibility()  , "LYFT Tab is NOT visible!" );
+		System.out.println("LYFT tab is visible");
+		Assert.assertTrue(homePageObjects.OLOSTabTabVisibility() , "OLOS Tab is NOT visible"  );
+		System.out.println("OLOS tab is visible");
+	}
+	
 }
