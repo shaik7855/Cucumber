@@ -21,9 +21,11 @@ public class Base {
 	public ReadConfig readconfig=new ReadConfig();
 	
 	public String baseURL = readconfig.getProperty("baseURL");
+	public String loggedinusername = readconfig.getProperty("loggedinusername");
 	//public String baseURL = readconfig.getApplicationURL();
 	public String username=readconfig.getProperty("username");
 	public String password=readconfig.getProperty("password");
+	public String memberid=readconfig.getProperty("memberid");
 	//------------------------------------------------------------------------------------------------------
 	
 	public WebDriver driver;
