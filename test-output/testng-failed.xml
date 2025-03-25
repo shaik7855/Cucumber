@@ -7,8 +7,8 @@
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
+          <include name="verifyOLOSClear_TC_07"/>
           <include name="setup"/>
-          <include name="verifyRemarkCommentAdd_TC_18"/>
         </methods>
       </class> <!-- MTMAutomation.DispatchTest.MTMDispatchTest -->
     </classes>

@@ -22,10 +22,13 @@ public class Base {
 	
 	public String baseURL = readconfig.getProperty("baseURL");
 	public String loggedinusername = readconfig.getProperty("loggedinusername");
-	//public String baseURL = readconfig.getApplicationURL();
 	public String username=readconfig.getProperty("username");
 	public String password=readconfig.getProperty("password");
 	public String memberid=readconfig.getProperty("memberid");
+	public String firstname = readconfig.getProperty("firstname");
+	public String lastname = readconfig.getProperty("lastname");
+	public String phone = readconfig.getProperty("phone");
+	public String dob=readconfig.getProperty("dob");
 	//------------------------------------------------------------------------------------------------------
 	
 	public WebDriver driver;

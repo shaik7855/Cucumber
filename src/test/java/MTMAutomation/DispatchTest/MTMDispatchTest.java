@@ -71,7 +71,7 @@ public class MTMDispatchTest extends Base{
 		action.moveToElement(lo.btnYes()).click().build().perform();
 		logger.info("Clicked on yes button");
 		logger.info("Application is successfully opened");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
 		Assert.assertTrue(lo.getLogoImg().isDisplayed());
 		
@@ -169,4 +169,153 @@ public class MTMDispatchTest extends Base{
 		
 		Assert.assertTrue(dp.titleDispatch().isDisplayed());
 	}
+
+@Test
+	public void verifyOLOSClear_TC_07() throws IOException, InterruptedException
+	{	
+		wait.until(ExpectedConditions.elementToBeClickable(dp.tabOlos()));
+		action.moveToElement(dp.tabOlos()).click().build().perform();
+		logger.info("Clicked on Olos tab");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setFirstName()));
+		dp.setFirstName().sendKeys(firstname);
+		logger.info("Entered First name");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setLastName()));
+		dp.setLastName().sendKeys(lastname);
+		logger.info("Entered Last name");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setDOB()));
+		dp.setDOB().sendKeys(dob);
+		logger.info("Entered DOB");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setPhone()));
+		dp.setPhone().sendKeys(phone);
+		logger.info("Entered Phone");
+		Thread.sleep(2000);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.clearBtn()));
+		action.moveToElement(dp.clearBtn()).click().build().perform();
+		logger.info("Clicked on clear button");	
+		
+		Assert.assertTrue(dp.setFirstName().getText().isEmpty());
+		Assert.assertTrue(dp.setLastName().getText().isEmpty());
+		Assert.assertTrue(dp.setPhone().getText().isEmpty());
+		Assert.assertTrue(dp.setDOB().getText().isEmpty());
+		
+	}
+	public void verifyOLOSSearch_TC_08() throws IOException, InterruptedException
+	{
+		wait.until(ExpectedConditions.elementToBeClickable(dp.tabOlos()));
+		action.moveToElement(dp.tabOlos()).click().build().perform();
+		logger.info("Clicked on Olos tab");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setFirstName()));
+		dp.setFirstName().sendKeys(firstname);
+		logger.info("Entered First name");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setLastName()));
+		dp.setLastName().sendKeys(lastname);
+		logger.info("Entered Last name");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setDOB()));
+		dp.setDOB().sendKeys(dob);
+		logger.info("Entered DOB");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setPhone()));
+		dp.setPhone().sendKeys(phone);
+		logger.info("Entered Phone");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.searchBtn()));
+		action.moveToElement(dp.searchBtn()).click().build().perform();
+		logger.info("Clicked on search button");
+	}
+@Test	
+	public void verifyLYFTClear_TC_13() throws IOException, InterruptedException
+	{
+		wait.until(ExpectedConditions.elementToBeClickable(dp.tabLyft()));
+		action.moveToElement(dp.tabLyft()).click().build().perform();
+		logger.info("Redirected to Lyft Page");	
+		Thread.sleep(2000);
+		
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(dp.memberID()));
+			dp.memberID().sendKeys(memberid);
+			logger.info("Entered Member ID");
+		}
+		catch(StaleElementReferenceException e){
+			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='md-input ember-view']"))));
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//input[@class='md-input ember-view']")).sendKeys(memberid);
+			logger.info("Entered Member ID");
+		}
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setFirstName()));
+		dp.setFirstName().sendKeys(firstname);
+		logger.info("Entered First name");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setLastName()));
+		dp.setLastName().sendKeys(lastname);
+		logger.info("Entered Last name");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setDOB()));
+		dp.setDOB().sendKeys(dob);
+		logger.info("Entered DOB");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setPhone()));
+		dp.setPhone().sendKeys(phone);
+		logger.info("Entered Phone");
+		Thread.sleep(2000);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.clearBtn()));
+		action.moveToElement(dp.clearBtn()).click().build().perform();
+		logger.info("Clicked on clear button");	
+		
+		Assert.assertTrue(dp.memberID().getText().isEmpty());
+		Assert.assertTrue(dp.setFirstName().getText().isEmpty());
+		Assert.assertTrue(dp.setLastName().getText().isEmpty());
+		Assert.assertTrue(dp.setPhone().getText().isEmpty());
+		Assert.assertTrue(dp.setDOB().getText().isEmpty());			
+	}
+@Test
+	public void verifyLYFTSearch_TC_05() throws IOException, InterruptedException
+	{
+		wait.until(ExpectedConditions.elementToBeClickable(dp.tabLyft()));
+		action.moveToElement(dp.tabLyft()).click().build().perform();
+		logger.info("Redirected to Lyft Page");	
+		Thread.sleep(2000);
+		
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(dp.memberID()));
+			dp.memberID().sendKeys(memberid);
+			logger.info("Entered Member ID");
+		}
+		catch(StaleElementReferenceException e){
+			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='md-input ember-view']"))));
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//input[@class='md-input ember-view']")).sendKeys(memberid);
+			logger.info("Entered Member ID");
+		}
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setFirstName()));
+		dp.setFirstName().sendKeys(firstname);
+		logger.info("Entered First name");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setLastName()));
+		dp.setLastName().sendKeys(lastname);
+		logger.info("Entered Last name");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setDOB()));
+		dp.setDOB().sendKeys(dob);
+		logger.info("Entered DOB");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.setPhone()));
+		dp.setPhone().sendKeys(phone);
+		logger.info("Entered Phone");
+		Thread.sleep(2000);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.searchBtn()));
+		action.moveToElement(dp.searchBtn()).click().build().perform();
+		logger.info("Clicked on search button");	
+		
+	}
+
 }

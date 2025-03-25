@@ -131,4 +131,32 @@ public class DispatchObjects extends DispatchLocators {
 	public WebElement getRemarkText() {
 	    return remarktext;
 	}
+	
+	@FindBy(xpath=firstname_text)
+	@CacheLookup
+	WebElement firstnametext;
+	public WebElement setFirstName() {
+	    return firstnametext;
+	}
+	
+	@FindBy(xpath=lastname_text)
+	@CacheLookup
+	WebElement lastnametext;
+	public WebElement setLastName() {
+	    return lastnametext;
+	}
+	
+	@FindBy(xpath=dob_text)
+	@CacheLookup
+	WebElement dobtext;
+	public WebElement setDOB() {
+	    return dobtext;
+	}
+	
+	@FindBy(xpath=phone_text)
+	@CacheLookup
+	WebElement phonetext;
+	public WebElement setPhone() {
+	    return phonetext;
+	}
 }
