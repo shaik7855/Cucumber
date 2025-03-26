@@ -55,4 +55,11 @@ public class LoginObjects extends LoginLocators {
 	    return btnyes;
 	}
 	
+	@FindBy(xpath=logo_img)
+	@CacheLookup
+	WebElement logoimg;
+	public WebElement getLogoImg() {
+	    return logoimg;
+	}
+	
 }

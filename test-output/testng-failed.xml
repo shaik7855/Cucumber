@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="MTMAutomation.DispatchTest.MTMTest">
+      <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
         <methods>
-          <include name="setup"/>
           <include name="tearDown"/>
-          <include name="verifyUserLogin"/>
           <include name="setup"/>
+          <include name="setup"/>
+          <include name="verifyRemarkCommentAdd_TC_18"/>
         </methods>
-      </class> <!-- MTMAutomation.DispatchTest.MTMTest -->
+      </class> <!-- MTMAutomation.DispatchTest.MTMDispatchTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
