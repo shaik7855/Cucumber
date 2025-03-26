@@ -7,5 +7,6 @@ public class LoginLocators {
 	public final String password_xpath= "//input[@name='passwd']";
 	public final String signinbutton_id_value = "idSIButton9";
 	public final String yesbutton_id_value = "idSIButton9";
+	public final String logo_img="//img[contains(@src, 'logo')]";
 }
 

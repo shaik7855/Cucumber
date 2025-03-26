@@ -8,7 +8,7 @@
           <include name="tearDown"/>
           <include name="setup"/>
           <include name="setup"/>
-          <include name="navigationBetweenTabs"/>
+          <include name="verifyRemarkCommentAdd_TC_18"/>
         </methods>
       </class> <!-- MTMAutomation.DispatchTest.MTMDispatchTest -->
     </classes>
