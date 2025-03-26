@@ -35,7 +35,7 @@ public class MTMDispatchTest extends Base
         driver.navigate().to(baseURL);
         verifyUserLogin();
     }
-@Test()
+
 	public void verifyUserLogin() throws IOException, InterruptedException
 	{
 	try {
