@@ -90,17 +90,14 @@ public class MTMDispatchTest extends Base
 		logger.info("Initial record count: " + initialRecordCount );
 		System.out.println("Initial record count: " + initialRecordCount );
 		
-		Thread.sleep(3000);
+		Thread.sleep(3000);	
 		
 		dispatchPage.clickOnTimeFrameFilter_0_6();
 		Thread.sleep(3000);
-		
-		int afterClickingOn_0_6_filter  = dispatchPage.getRecordCount();
-		logger.info("afterClickingOn_0_6_filter: " + afterClickingOn_0_6_filter );
-		System.out.println("afterClickingOn_0_6_filter: " + afterClickingOn_0_6_filter );
-		
-		dispatchPage.clickOnTimeFrameFilter_6_12();
-		Thread.sleep(3000);
+		boolean isFilterApplied = dispatchPage.isTimeFrameFilterApplied_0_6();
+		Assert.assertTrue(isFilterApplied , "Time frame filter (0-6 hours) is not applied correctly");
+		logger.info("Successfully Filter Applied ");
+		System.out.println("Successfully Filter Applied");
 	}
 	
 }

@@ -1,7 +1,9 @@
 package MTMAutomation.DispatchTest.PageObjects;
 
+import java.util.Iterator;
 import java.util.List;
 
+import org.apache.logging.log4j.core.tools.picocli.CommandLine.Help.Ansi.Text;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -49,7 +51,7 @@ public class DispatchPageObjects
     
     // Method to get count of counts
     
-    @FindBy(xpath = "//table//tbody")
+    @FindBy(xpath = "//table//tbody//tr")
     @CacheLookup
     List<WebElement> tableRows;
 
@@ -57,4 +59,39 @@ public class DispatchPageObjects
     {
         return tableRows.size();
     }
+    
+    
+    @FindBy (xpath = "//table//tbody//tr/td/div[@class='ember-view']")
+    @CacheLookup
+    List<WebElement> rowsCount;
+    //To check the filter is applied 
+    public boolean  isTimeFrameFilterApplied_0_6 ()
+    {
+    	//for loop for the iterate through each row 
+    	for (WebElement row : rowsCount)
+    	{
+    		// getting the text content 
+    		String text = row.getText().trim();
+    			//checking that text contains the "hours"
+    			if (text.toLowerCase().contains("hours")) 
+    				{
+    				//spliting the text and extracting the numeric value 
+    					int hours = Integer.parseInt(text.split("")[0]);
+    						//validating the extratced hours falling in range of (0-6)
+    						if (hours < 0 || hours > 6 )
+    						{
+    							return false; // Return false if any row is out of range
+    						}
+    				}
+	
+    	}
+		return true; // Return true if all rows meet the condition
+    }
+    
+    
+    
+    
+    
+    
+    
 }

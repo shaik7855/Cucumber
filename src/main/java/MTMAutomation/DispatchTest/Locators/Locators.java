@@ -13,4 +13,6 @@ public class Locators
 	public static final String TimeFrameFilter_12_24 ="//span[contains(text(),'12 - 24 Hours Left')]"; //xpath
 	
 	public static final String Date_Range ="//span[contains(text(),'Date Range')]"; //xpath
+	
+	//common xpath for records = "//table//tbody//tr/td/div[@class='ember-view']"
 }
