@@ -1,5 +1,4 @@
 package MTMAutomation.DispatchTest;
-
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -29,7 +28,7 @@ public class MTMDispatchTest extends Base
 	DispatchObjects dp;
 	WebDriverWait wait;
 	Actions action;
-	@BeforeMethod(alwaysRun=true)
+@BeforeMethod(alwaysRun=true)
     public void setup() throws InterruptedException, IOException
     {
     	lo = new LoginObjects(driver);
@@ -107,6 +106,35 @@ public class MTMDispatchTest extends Base
     }
 
 	@Test
+	public void verifyRecordSelection() throws InterruptedException
+	{	
+		//------------TC_04------------// 
+		HomePageObjects homePageObjects = new HomePageObjects(driver);
+	    DispatchPageObjects dispatchPageObjects = new DispatchPageObjects(driver);
+
+	    //  Click on Dispatch Tab
+		homePageObjects.clickOnDispatchTab();
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL , "Dispatch tab URL is incorrect");
+		logger.info("Successfully navigated to Dispatch tab");
+		System.out.println("Successfully navigated to Dispatch tab");
+		
+		
+		 // Select a record by clicking on the checkbox
+	    dispatchPageObjects.selectFirstRecordCheckbox();
+	    Assert.assertTrue(dispatchPageObjects.isBurgerIconVisible(), "Burger icon is not visible");
+	    logger.info("Burger icon is visible after selecting the record");
+	    System.out.println("Burger icon is visible after selecting the record");
+	    
+	    
+	    //Click on the burger icon
+	    dispatchPageObjects.clickBurgerIcon();
+	    Assert.assertTrue(dispatchPageObjects.isDetailsPanelDisplayed(), "Details panel is not displayed after clicking burger icon");
+	    logger.info("Details panel is displayed for the selected record");
+	    System.out.println("Details panel is displayed for the selected record");
+		}
+
+
+	@Test
 	public void verifyAllColumnsVisible() throws InterruptedException
 	{
 		//---TC 10  view all the columns in Dispatch tab ---//
@@ -129,6 +157,7 @@ public class MTMDispatchTest extends Base
 	    System.out.println("Columns in Dispatch Table: " + columnNames);
 	    Assert.assertEquals(columnNames ,Locators.EXPECTED_COLUMNS , "Some expected columns are missing!" );
 	    System.out.println("All columns are correctly displayed.");
+
 		
 	}
 	

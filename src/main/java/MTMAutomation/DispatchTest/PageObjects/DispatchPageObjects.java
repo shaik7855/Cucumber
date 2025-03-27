@@ -1,30 +1,59 @@
 package MTMAutomation.DispatchTest.PageObjects;
-
-import java.util.List;
-import java.util.stream.Collectors;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import MTMAutomation.DispatchTest.Locators.Locators;
-
-public class DispatchPageObjects
+public class DispatchPageObjects 
 {
 	WebDriver driver;
-	
-	 // Constructor 
-	  public DispatchPageObjects(WebDriver driver) 
-	  	{
-	        this.driver = driver;
-	        PageFactory.initElements(driver, this);
-	    } 
-	  
-	  
-	  
+
+    // Constructor
+    public DispatchPageObjects(WebDriver driver)
+    {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+    
+    
+    //---------Method to select first record checkbox------------//
+    
+    @FindBy(xpath = "//table//tr[1]//td[1]//input[@type='checkbox']")
+    WebElement firstRecordCheckbox;
+    public void selectFirstRecordCheckbox() 
+    {
+        firstRecordCheckbox.click();
+    }
+    
+    //---------Method to see burger icon is visible------------//
+    
+    @FindBy(xpath = "//icon[@data-icon='menu']")
+    WebElement burgerIcon;
+    public boolean isBurgerIconVisible()
+    {
+        return burgerIcon.isDisplayed();
+    }
+    
+    //---------Method to click on burger icon------------//
+    
+    @FindBy(xpath = "//icon[@data-icon='menu']")
+    WebElement burgerIcon1;
+    
+    public void clickBurgerIcon() 
+    {
+        burgerIcon1.click();
+    }
+    
+    
+    //---------Method to see the deatails in the pannel are displayed------------//
+    
+    @FindBy(xpath = "//span[.='Include Providers By County']")
+    WebElement detailsPanel;
+    public boolean isDetailsPanelDisplayed()
+    {
+        return detailsPanel.isDisplayed();
+    }
+     
 	  
    // Method to get all column headers dynamically
 	  
@@ -64,4 +93,5 @@ public class DispatchPageObjects
     }
     
     
+
 }
