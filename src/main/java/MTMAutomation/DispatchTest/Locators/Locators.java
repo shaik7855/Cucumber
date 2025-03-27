@@ -3,6 +3,7 @@ package MTMAutomation.DispatchTest.Locators;
 import java.util.Arrays;
 import java.util.List;
 
+
 public class Locators 
 {
 	public static final String DISPATCH_URL = "https://dispatch-test.mtm-inc.net/";
@@ -21,9 +22,9 @@ public class Locators
     		"Pickup County", "Pickup Zip", "Destination Facility", "Destination Address", "Destination City", 
     		"Destination State", "Destination County", "Destination Zip");
 
-public class Locators 
-{
-	public static final String DISPATCH_URL = "https://dispatch-test.mtm-inc.net/";
+
+
+
 	public static final String LYFT_URL = "https://dispatch-test.mtm-inc.net/#/external-api?account=A2C&applicationAccount=A2C";
 	public static final String OLOS_URL = "https://dispatch-test.mtm-inc.net/#/external-api?account=OLOS&applicationAccount=OLOS";
 	
