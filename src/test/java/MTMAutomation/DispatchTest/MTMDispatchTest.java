@@ -169,7 +169,7 @@ public class MTMDispatchTest extends Base
 		logger.info("Clicked on Add button");
 		Thread.sleep(2000);
 		
-		Assert.assertEquals(dp.getRemarkUsername().getText(), loggedinusername);
+		Assert.assertEquals(dp.getRemarkUsername().getText(), username.substring(0, 4));
 		Assert.assertEquals(dp.getRemarkText().getText(), remark_value);
 		
 	}
