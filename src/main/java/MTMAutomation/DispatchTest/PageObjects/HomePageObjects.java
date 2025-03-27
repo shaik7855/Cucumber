@@ -7,6 +7,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import MTMAutomation.DispatchTest.Locators.Locators;
 import MTMAutomation.DispatchTest.Locators.HomePageLocators;
 
 
@@ -23,6 +24,7 @@ public class HomePageObjects
 
 	//-----------clicking on dispatch tab--------------//
 	
+	@FindBy(xpath = Locators.DISPATCH_TAB)
 	@FindBy(xpath = HomePageLocators.DISPATCH_TAB)
 	@CacheLookup
 	private  WebElement dispatchTab;
@@ -32,6 +34,7 @@ public class HomePageObjects
 	    dispatchTab.click();
 	}
     
+	
 	//-----------clicking on Lyft tab--------------//
     
 	@FindBy(xpath = HomePageLocators.lYFT_TAB)

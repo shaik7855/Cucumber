@@ -2,6 +2,7 @@ package MTMAutomation.DispatchTest;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 import static org.testng.Assert.assertTrue;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -45,7 +46,7 @@ public class MTMDispatchTest extends Base
 		lo.username().sendKeys(username);
 		logger.info("Entered Username");
 		}
-	catch(StaleElementReferenceException e)
+		catch(StaleElementReferenceException e)
 		{
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("loginfmt"))));
 		driver.findElement(By.name("loginfmt")).sendKeys(username);
@@ -99,14 +100,38 @@ public class MTMDispatchTest extends Base
 		wait.until(ExpectedConditions.elementToBeClickable(lo.btnYes()));
 		action.moveToElement(lo.btnYes()).click().build().perform();
 		logger.info("Clicked on yes button");
-		logger.info("Application is successfully opened");
+		logger.info("Application is successfully opened");	
 		Thread.sleep(2000);
-		
 		Assert.assertTrue(lo.getLogoImg().isDisplayed());
+    }
+
+	@Test
+	public void verifyAllColumnsVisible() throws InterruptedException
+	{
+		//---TC 10  view all the columns in Dispatch tab ---//
+		HomePageObjects homePageObjects = new HomePageObjects(driver);
+	    DispatchPageObjects dispatchPageObjects = new DispatchPageObjects(driver);
+
+	    
+		// Click on Dispatch Tab
+		homePageObjects.clickOnDispatchTab();
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL , "Dispatch tab URL is incorrect!");
+		logger.info("Successfully navigated to Dispatch tab");
+	    System.out.println("Successfully navigated to Dispatch tab");
+	    
+	    Thread.sleep(2000);
+	    
+	    // Fetch and validate column headers 
+	    Assert.assertTrue(dispatchPageObjects.isTimeLeftColumnDisplayed(), "'Time Left' column is missing from the table!");
+	    System.out.println("Time Left column is Present");
+	    List<String> columnNames = dispatchPageObjects.getAllColumnHeaders();
+	    System.out.println("Columns in Dispatch Table: " + columnNames);
+	    Assert.assertEquals(columnNames ,Locators.EXPECTED_COLUMNS , "Some expected columns are missing!" );
+	    System.out.println("All columns are correctly displayed.");
 		
 	}
+	
 
-		
 	@Test
 	public void navigationBetweenTabs() throws InterruptedException
 	{
