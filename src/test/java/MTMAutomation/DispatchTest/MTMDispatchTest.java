@@ -17,18 +17,19 @@ import MTMAutomation.DispatchTest.Locators.Locators;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
 import MTMAutomation.DispatchTest.PageObjects.LoginObjects;
 import MTMAutomation.DispatchTest.PageObjects.DispatchObjects;
-import MTMAutomation.DispatchTest.PageObjects.DispatchPageObjects;
+import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
 import MTMAutomation.DispatchTest.Utilities.Base;
 /**
  * Unit test for simple App.
  */
+
 public class MTMDispatchTest extends Base
 {
 	LoginObjects lo;
 	DispatchObjects dp;
 	WebDriverWait wait;
 	Actions action;
-@BeforeMethod(alwaysRun=true)
+	@BeforeMethod(alwaysRun=true)
     public void setup() throws InterruptedException, IOException
     {
     	lo = new LoginObjects(driver);
@@ -41,7 +42,8 @@ public class MTMDispatchTest extends Base
 	
 	public void verifyUserLogin() throws IOException, InterruptedException
 	{
-	try {
+		try
+		 {
 		wait.until(ExpectedConditions.elementToBeClickable(lo.username()));
 		lo.username().sendKeys(username);
 		logger.info("Entered Username");
@@ -67,7 +69,43 @@ public class MTMDispatchTest extends Base
 				logger.info("Entered Password");
 			}
     }
-
+	
+	public void verifyUserLogin() throws IOException, InterruptedException
+	{
+	try {
+		wait.until(ExpectedConditions.elementToBeClickable(lo.username()));
+		lo.username().sendKeys(username);
+		logger.info("Entered Username");
+	}
+	catch(StaleElementReferenceException e)
+	{
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("loginfmt"))));
+		driver.findElement(By.name("loginfmt")).sendKeys(username);
+		logger.info("Entered Username");
+	}
+		wait.until(ExpectedConditions.elementToBeClickable(lo.btnNext()));
+		action.moveToElement(lo.btnNext()).click().build().perform();
+		logger.info("Clicked on Next");
+			try {
+				wait.until(ExpectedConditions.elementToBeClickable(lo.password()));
+				lo.password().sendKeys(password);
+				logger.info("Entered Password");
+			}
+			catch(StaleElementReferenceException e){
+				wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("passwd"))));
+				driver.findElement(By.name("passwd")).sendKeys(password);
+				logger.info("Entered Password");
+			}
+		wait.until(ExpectedConditions.elementToBeClickable(lo.btnSignIn()));
+		action.moveToElement(lo.btnSignIn()).click().build().perform();
+		logger.info("Clicked on Sign in button");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(lo.btnYes()));
+		action.moveToElement(lo.btnYes()).click().build().perform();
+		logger.info("Clicked on yes button");
+		logger.info("Application is successfully opened");	
+    }
+	
 	public void verifyUserLogin_TC_01() throws IOException, InterruptedException
 	{
 		try {
@@ -182,7 +220,7 @@ public class MTMDispatchTest extends Base
 	}
 	
 
-@Test	
+
 	public void verifySignOut_TC_09() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.btnSignOut()));
@@ -195,7 +233,7 @@ public class MTMDispatchTest extends Base
 		//Signout not working
 		
 	}
-@Test
+
 	public void verifyLYFTSearchNoData_TC_12() throws IOException, InterruptedException
 	{
 		
@@ -214,7 +252,7 @@ public class MTMDispatchTest extends Base
 		
 	}
 	
-@Test	
+	
 	public void verifyRemarkCommentAdd_TC_18() throws IOException, InterruptedException
 	{
 		String remark_value = "Remark Added";
@@ -240,7 +278,7 @@ public class MTMDispatchTest extends Base
 		Assert.assertEquals(dp.getRemarkText().getText(), remark_value);
 	
 	}
-@Test
+
 	public void verifyRemarkAddDialoguebox_TC_19() throws IOException, InterruptedException
 	{		
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabDispatch()));
@@ -255,7 +293,7 @@ public class MTMDispatchTest extends Base
 		Assert.assertFalse(dp.btnRemarkAdd().isEnabled());
 		
 	}
-@Test
+
 	public void verifyRemarkCloseIcon_TC_20() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabDispatch()));
@@ -273,5 +311,18 @@ public class MTMDispatchTest extends Base
 		logger.info("Remark close icon clicked");
 		
 		Assert.assertTrue(dp.titleDispatch().isDisplayed());
+	}
+
+@Test	
+	public void verifyTabsOnHomePage()
+	{	
+		HomePageObjects homePageObjects  = new HomePageObjects(driver);
+	
+		Assert.assertTrue(homePageObjects.dispatchTabVisibility() , "Dispatch Tab is NOT visible"  );
+		System.out.println("Dispatch tab is visible");
+		Assert.assertTrue(homePageObjects.lyftTabTabVisibility()  , "LYFT Tab is NOT visible!" );
+		System.out.println("LYFT tab is visible");
+		Assert.assertTrue(homePageObjects.OLOSTabTabVisibility() , "OLOS Tab is NOT visible"  );
+		System.out.println("OLOS tab is visible");
 	}
 }
