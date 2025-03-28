@@ -3,7 +3,6 @@ package MTMAutomation.DispatchTest.PageObjects;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.logging.log4j.core.tools.picocli.CommandLine.Help.Ansi.Text;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -90,6 +89,12 @@ public class DispatchPageObjects
     //To check the filter is applied 
     public boolean  isTimeFrameFilterApplied_0_6 ()
     {
+    	// Check if table is empty
+        if (rowsCount.isEmpty())
+        { 
+            System.out.println("No data available after applying 0-6 hours filter.");
+            return false; 
+        }
     	//for loop for the iterate through each row 
     	for (WebElement row : rowsCount)
     	{
@@ -99,7 +104,7 @@ public class DispatchPageObjects
     			if (text.toLowerCase().contains("hours")) 
     				{
     				//spliting the text and extracting the numeric value 
-    					int hours = Integer.parseInt(text.split("")[0]);
+    					int hours = Integer.parseInt(text.split(" ")[0]);
     						//validating the extratced hours falling in range of (0-6)
     						if (hours < 0 || hours > 6 )
     						{
@@ -120,6 +125,13 @@ public class DispatchPageObjects
     //To check the filter is applied 
     public boolean  isTimeFrameFilterApplied_6_12 ()
     {
+    	// Check if table is empty
+        if (rowsCount.isEmpty())
+        { 
+            System.out.println("No data available after applying 6-12 hours filter.");
+            return false; 
+        }
+        
     	//for loop for the iterate through each row 
     	for (WebElement row : rowsCount1)
     	{
@@ -148,6 +160,13 @@ public class DispatchPageObjects
     //To check the filter is applied 
     public boolean  isTimeFrameFilterApplied_12_24 ()
     {
+    	// Check if table is empty
+        if (rowsCount.isEmpty())
+        { 
+            System.out.println("No data available after applying 12-24 hours filter.");
+            return false; 
+        }
+        
     	//for loop for the iterate through each row 
     	for (WebElement row : rowsCount2)
     	{
