@@ -1,3 +1,5 @@
+package MTMAutomation.DispatchTest.Locators;
+
 public class HomePageLocators 
 {
 	// --------------------------------Home Page Locators------------------------------------------- //

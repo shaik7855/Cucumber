@@ -17,6 +17,7 @@ import MTMAutomation.DispatchTest.Locators.Locators;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
 import MTMAutomation.DispatchTest.PageObjects.LoginObjects;
 import MTMAutomation.DispatchTest.PageObjects.DispatchObjects;
+import MTMAutomation.DispatchTest.PageObjects.DispatchPageObjects;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
 import MTMAutomation.DispatchTest.Utilities.Base;
 /**
@@ -29,6 +30,7 @@ public class MTMDispatchTest extends Base
 	DispatchObjects dp;
 	WebDriverWait wait;
 	Actions action;
+	
 	@BeforeMethod(alwaysRun=true)
     public void setup() throws InterruptedException, IOException
     {
@@ -40,35 +42,6 @@ public class MTMDispatchTest extends Base
         verifyUserLogin();		
     }
 	
-	public void verifyUserLogin() throws IOException, InterruptedException
-	{
-		try
-		 {
-		wait.until(ExpectedConditions.elementToBeClickable(lo.username()));
-		lo.username().sendKeys(username);
-		logger.info("Entered Username");
-		}
-		catch(StaleElementReferenceException e)
-		{
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("loginfmt"))));
-		driver.findElement(By.name("loginfmt")).sendKeys(username);
-		logger.info("Entered Username");
-		}
-		wait.until(ExpectedConditions.elementToBeClickable(lo.btnNext()));
-		action.moveToElement(lo.btnNext()).click().build().perform();
-		logger.info("Clicked on Next");
-			try {
-				wait.until(ExpectedConditions.elementToBeClickable(lo.password()));
-				lo.password().sendKeys(password);
-				logger.info("Entered Password");
-			    }
-			catch(StaleElementReferenceException e)
-			{
-				wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("passwd"))));
-				driver.findElement(By.name("passwd")).sendKeys(password);
-				logger.info("Entered Password");
-			}
-    }
 	
 	public void verifyUserLogin() throws IOException, InterruptedException
 	{
@@ -143,7 +116,7 @@ public class MTMDispatchTest extends Base
 		Assert.assertTrue(lo.getLogoImg().isDisplayed());
     }
 
-	@Test
+	
 	public void verifyRecordSelection() throws InterruptedException
 	{	
 		//------------TC_04------------// 
@@ -169,10 +142,10 @@ public class MTMDispatchTest extends Base
 	    Assert.assertTrue(dispatchPageObjects.isDetailsPanelDisplayed(), "Details panel is not displayed after clicking burger icon");
 	    logger.info("Details panel is displayed for the selected record");
 	    System.out.println("Details panel is displayed for the selected record");
-		}
+	}
 
 
-	@Test
+	
 	public void verifyAllColumnsVisible() throws InterruptedException
 	{
 		//---TC 10  view all the columns in Dispatch tab ---//
@@ -194,13 +167,11 @@ public class MTMDispatchTest extends Base
 	    List<String> columnNames = dispatchPageObjects.getAllColumnHeaders();
 	    System.out.println("Columns in Dispatch Table: " + columnNames);
 	    Assert.assertEquals(columnNames ,Locators.EXPECTED_COLUMNS , "Some expected columns are missing!" );
-	    System.out.println("All columns are correctly displayed.");
-
-		
+	    System.out.println("All columns are correctly displayed.");	
 	}
 	
 
-	@Test
+	
 	public void navigationBetweenTabs() throws InterruptedException
 	{
 		HomePageObjects homePageObjects = new HomePageObjects(driver);
@@ -288,10 +259,8 @@ public class MTMDispatchTest extends Base
 		WebElement commentbox = driver.findElement(By.xpath("//td[text()='" + memberid + "']/ancestor::tr/child::td[3]"));
 		wait.until(ExpectedConditions.elementToBeClickable(commentbox));
 		action.moveToElement(commentbox).click().build().perform();
-		logger.info("Comment icon clicked");
-		
-		Assert.assertFalse(dp.btnRemarkAdd().isEnabled());
-		
+		logger.info("Comment icon clicked");	
+		Assert.assertFalse(dp.btnRemarkAdd().isEnabled());	
 	}
 
 	public void verifyRemarkCloseIcon_TC_20() throws IOException, InterruptedException
@@ -320,9 +289,9 @@ public class MTMDispatchTest extends Base
 	
 		Assert.assertTrue(homePageObjects.dispatchTabVisibility() , "Dispatch Tab is NOT visible"  );
 		System.out.println("Dispatch tab is visible");
-		Assert.assertTrue(homePageObjects.lyftTabTabVisibility()  , "LYFT Tab is NOT visible!" );
+		Assert.assertTrue(homePageObjects.lyftTabVisibility()  , "LYFT Tab is NOT visible!" );
 		System.out.println("LYFT tab is visible");
-		Assert.assertTrue(homePageObjects.OLOSTabTabVisibility() , "OLOS Tab is NOT visible"  );
+		Assert.assertTrue(homePageObjects.olosTabVisibility() , "OLOS Tab is NOT visible"  );
 		System.out.println("OLOS tab is visible");
 	}
 }
