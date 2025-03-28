@@ -75,29 +75,59 @@ public class MTMDispatchTest extends Base
 	public void toVerifyTimeFrameFilter() throws InterruptedException
 	{
 		//--------TC 14 ---------//
+		// Creating objects for HomePage and DispatchPage
 		HomePageObjects homePageObjects = new HomePageObjects(driver);
-	    DispatchPageObjects dispatchPage = new DispatchPageObjects(driver);
+		DispatchPageObjects dispatchPage = new DispatchPageObjects(driver);
 
+		// Creating an explicit wait instance
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		
+		// Navigating to the Dispatch tab
 		homePageObjects.clickOnDispatchTab();
-		Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL , "Dispatch tab URL is incorrect!");
+		wait.until(ExpectedConditions.urlToBe(Locators.DISPATCH_URL));
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL, "Dispatch tab URL is incorrect!");
 		logger.info("Successfully navigated to Dispatch tab");
 		System.out.println("Successfully navigated to Dispatch tab");
-		
+
 		Thread.sleep(3000); 
-		
-		int initialRecordCount   = dispatchPage.getRecordCount();
-		logger.info("Initial record count: " + initialRecordCount );
-		System.out.println("Initial record count: " + initialRecordCount );
-		
-		Thread.sleep(3000);	
-		
+
+		// Fetching initial record count before applying any filters
+		int initialRecordCount = dispatchPage.getRecordCount();
+		logger.info("Initial record count: " + initialRecordCount);
+		System.out.println("Initial record count: " + initialRecordCount);
+
+		// Applying Time Frame Filter (0-6 hours)
 		dispatchPage.clickOnTimeFrameFilter_0_6();
+		Thread.sleep(3000); // Wait for filter to be applied
+		boolean isFilterApplied_0_6 = dispatchPage.isTimeFrameFilterApplied_0_6();
+		Assert.assertTrue(isFilterApplied_0_6, "Time frame filter (0-6 hours) is not applied correctly");
+		logger.info("Successfully applied 0-6 hours filter");
+		System.out.println("Successfully applied 0-6 hours filter");
+
+		// Applying Time Frame Filter (6-12 hours)
+		Thread.sleep(3000); 
+		dispatchPage.clickOnTimeFrameFilter_6_12();
 		Thread.sleep(3000);
-		boolean isFilterApplied = dispatchPage.isTimeFrameFilterApplied_0_6();
-		Assert.assertTrue(isFilterApplied , "Time frame filter (0-6 hours) is not applied correctly");
-		logger.info("Successfully Filter Applied ");
-		System.out.println("Successfully Filter Applied");
+		boolean isFilterApplied_6_12 = dispatchPage.isTimeFrameFilterApplied_6_12();
+		Assert.assertTrue(isFilterApplied_6_12, "Time frame filter (6-12 hours) is not applied correctly");
+		logger.info("Successfully applied 6-12 hours filter");
+		System.out.println("Successfully applied 6-12 hours filter");
+
+		// Applying Time Frame Filter (12-24 hours)
+		Thread.sleep(3000);
+		dispatchPage.clickOnTimeFrameFilter_12_24();
+		Thread.sleep(3000);
+		boolean isFilterApplied_12_24 = dispatchPage.isTimeFrameFilterApplied_12_24();
+		Assert.assertTrue(isFilterApplied_12_24, "Time frame filter (12-24 hours) is not applied correctly");
+		logger.info("Successfully applied 12-24 hours filter");
+		System.out.println("Successfully applied 12-24 hours filter");
+
+		// Applying Date Range Filter
+		dispatchPage.clickOnDateRangeFilter();
+		Thread.sleep(3000);
+		logger.info("Successfully applied Date Range filter");
+		System.out.println("Successfully applied Date Range filter");
+
 	}
 	
 }

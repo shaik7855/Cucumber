@@ -48,6 +48,28 @@ public class DispatchPageObjects
         timeFrameFilter_6_12.click();
     }
 	
+    // Method to click on 12-24 filter 
+    
+    @FindBy(xpath = Locators.TimeFrameFilter_12_24 )
+    @CacheLookup
+    WebElement timeFrameFilter_12_24;
+
+    public void clickOnTimeFrameFilter_12_24()
+    {
+        timeFrameFilter_12_24.click();
+    }
+    
+    // Method to click on Date Range filter 
+    
+    @FindBy(xpath = Locators.Date_Range )
+    @CacheLookup
+    WebElement dateRange;
+
+    public void clickOnDateRangeFilter()
+    {
+    	dateRange.click();
+    }	
+    
     
     // Method to get count of counts
     
@@ -60,6 +82,7 @@ public class DispatchPageObjects
         return tableRows.size();
     }
     
+    // Method to check if we are getting correct records for 0-6 time filter 
     
     @FindBy (xpath = "//table//tbody//tr/td/div[@class='ember-view']")
     @CacheLookup
@@ -83,13 +106,67 @@ public class DispatchPageObjects
     							return false; // Return false if any row is out of range
     						}
     				}
-	
     	}
+
 		return true; // Return true if all rows meet the condition
     }
     
     
+ // Method to check if we are getting correct records for 6-12 time filter 
     
+    @FindBy (xpath = "//table//tbody//tr/td/div[@class='ember-view']")
+    @CacheLookup
+    List<WebElement> rowsCount1;
+    //To check the filter is applied 
+    public boolean  isTimeFrameFilterApplied_6_12 ()
+    {
+    	//for loop for the iterate through each row 
+    	for (WebElement row : rowsCount1)
+    	{
+    		// getting the text content 
+    		String text = row.getText().trim();
+    			//checking that text contains the "hours"
+    			if (text.toLowerCase().contains("hours")) 
+    				{
+    				//spliting the text and extracting the numeric value 
+    					int hours = Integer.parseInt(text.split("")[0]);
+    						//validating the extratced hours falling in range of (6-12)
+    						if (hours < 6 || hours > 12 )
+    						{
+    							return false; // Return false if any row is out of range
+    						}
+    				}
+    	}
+		return true; // Return true if all rows meet the condition
+    }
+    
+    // Method to check if we are getting correct records for 6-12 time filter 
+    
+    @FindBy (xpath = "//table//tbody//tr/td/div[@class='ember-view']")
+    @CacheLookup
+    List<WebElement> rowsCount2;
+    //To check the filter is applied 
+    public boolean  isTimeFrameFilterApplied_12_24 ()
+    {
+    	//for loop for the iterate through each row 
+    	for (WebElement row : rowsCount2)
+    	{
+    		// getting the text content 
+    		String text = row.getText().trim();
+    			//checking that text contains the "hours"
+    			if (text.toLowerCase().contains("hours")) 
+    				{
+    				//spliting the text and extracting the numeric value 
+    					int hours = Integer.parseInt(text.split("")[0]);
+    						//validating the extratced hours falling in range of (12-24)
+    						if (hours < 12 || hours > 24 )
+    						{
+    							return false; // Return false if any row is out of range
+    						}
+    				}
+    	}
+		return true; // Return true if all rows meet the condition
+    }
     
     
     
