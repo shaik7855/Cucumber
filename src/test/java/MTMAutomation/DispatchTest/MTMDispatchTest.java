@@ -145,7 +145,7 @@ public class MTMDispatchTest extends Base
 	}
 
 
-	
+	@Test
 	public void verifyAllColumnsVisible() throws InterruptedException
 	{
 		//---TC 10  view all the columns in Dispatch tab ---//
@@ -171,7 +171,7 @@ public class MTMDispatchTest extends Base
 	}
 	
 
-	
+	@Test
 	public void navigationBetweenTabs() throws InterruptedException
 	{
 		HomePageObjects homePageObjects = new HomePageObjects(driver);
