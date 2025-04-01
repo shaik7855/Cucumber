@@ -1,8 +1,11 @@
 package MTMAutomation.DispatchTest.PageObjects;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -10,15 +13,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import MTMAutomation.DispatchTest.Locators.Locators;
+import MTMAutomation.DispatchTest.Locators.TimeFilterLocators;
 
 
 
-public class DispatchPageObjects 
+public class TimeFilterObjects 
 {
 	WebDriver driver;
 
     // Constructor
-    public DispatchPageObjects(WebDriver driver)
+    public TimeFilterObjects(WebDriver driver)
     {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -27,7 +31,7 @@ public class DispatchPageObjects
     
     // Method to click on 0-6 filter 
     
-    @FindBy(xpath = Locators.TimeFrameFilter_0_6)
+    @FindBy(xpath = TimeFilterLocators.TimeFrameFilter_0_6)
     @CacheLookup
     WebElement timeFrameFilter_0_6;
 
@@ -38,7 +42,7 @@ public class DispatchPageObjects
     
 	// Method to click on 6-12 filter 
     
-    @FindBy(xpath = Locators.TimeFrameFilter_6_12 )
+    @FindBy(xpath = TimeFilterLocators.TimeFrameFilter_6_12 )
     @CacheLookup
     WebElement timeFrameFilter_6_12;
 
@@ -49,7 +53,7 @@ public class DispatchPageObjects
 	
     // Method to click on 12-24 filter 
     
-    @FindBy(xpath = Locators.TimeFrameFilter_12_24 )
+    @FindBy(xpath = TimeFilterLocators.TimeFrameFilter_12_24 )
     @CacheLookup
     WebElement timeFrameFilter_12_24;
 
@@ -60,7 +64,7 @@ public class DispatchPageObjects
     
     // Method to click on Date Range filter 
     
-    @FindBy(xpath = Locators.Date_Range )
+    @FindBy(xpath = TimeFilterLocators.Date_Range )
     @CacheLookup
     WebElement dateRange;
 
@@ -93,8 +97,10 @@ public class DispatchPageObjects
         if (rowsCount.isEmpty())
         { 
             System.out.println("No data available after applying 0-6 hours filter.");
-            return false; 
+            return true; 
         }
+        else 
+        {
     	//for loop for the iterate through each row 
     	for (WebElement row : rowsCount)
     	{
@@ -106,13 +112,13 @@ public class DispatchPageObjects
     				//spliting the text and extracting the numeric value 
     					int hours = Integer.parseInt(text.split(" ")[0]);
     						//validating the extratced hours falling in range of (0-6)
-    						if (hours < 0 || hours > 6 )
+    						if (hours < 0 && hours > 6 )
     						{
     							return false; // Return false if any row is out of range
     						}
     				}
     	}
-
+        }
 		return true; // Return true if all rows meet the condition
     }
     
@@ -126,29 +132,31 @@ public class DispatchPageObjects
     public boolean  isTimeFrameFilterApplied_6_12 ()
     {
     	// Check if table is empty
-        if (rowsCount.isEmpty())
+        if (rowsCount1.isEmpty())
         { 
             System.out.println("No data available after applying 6-12 hours filter.");
-            return false; 
+            return true; 
         }
-        
+        else 
+        {
     	//for loop for the iterate through each row 
     	for (WebElement row : rowsCount1)
-    	{
+    		{
     		// getting the text content 
     		String text = row.getText().trim();
     			//checking that text contains the "hours"
     			if (text.toLowerCase().contains("hours")) 
     				{
     				//spliting the text and extracting the numeric value 
-    					int hours = Integer.parseInt(text.split("")[0]);
+    					int hours = Integer.parseInt(text.split(" ")[0]);
     						//validating the extratced hours falling in range of (6-12)
-    						if (hours < 6 || hours > 12 )
+    						if (hours < 6 && hours > 12 )
     						{
     							return false; // Return false if any row is out of range
     						}
     				}
-    	}
+    		}
+        }
 		return true; // Return true if all rows meet the condition
     }
     
@@ -161,12 +169,13 @@ public class DispatchPageObjects
     public boolean  isTimeFrameFilterApplied_12_24 ()
     {
     	// Check if table is empty
-        if (rowsCount.isEmpty())
+        if (rowsCount2.isEmpty())
         { 
             System.out.println("No data available after applying 12-24 hours filter.");
-            return false; 
+            return true; 
         }
-        
+        else 
+        {	
     	//for loop for the iterate through each row 
     	for (WebElement row : rowsCount2)
     	{
@@ -176,18 +185,18 @@ public class DispatchPageObjects
     			if (text.toLowerCase().contains("hours")) 
     				{
     				//spliting the text and extracting the numeric value 
-    					int hours = Integer.parseInt(text.split("")[0]);
+    					int hours = Integer.parseInt(text.split(" ")[0]);
     						//validating the extratced hours falling in range of (12-24)
-    						if (hours < 12 || hours > 24 )
+    						if (hours < 12 && hours > 24 )
     						{
     							return false; // Return false if any row is out of range
     						}
     				}
     	}
+        }
 		return true; // Return true if all rows meet the condition
     }
-    
-    
-    
+  
+
     
 }
