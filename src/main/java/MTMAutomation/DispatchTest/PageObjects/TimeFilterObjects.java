@@ -2,6 +2,7 @@ package MTMAutomation.DispatchTest.PageObjects;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -84,6 +85,8 @@ public class TimeFilterObjects
     {
         return tableRows.size();
     }
+    
+
     
     // Method to check if we are getting correct records for 0-6 time filter 
     
@@ -198,5 +201,35 @@ public class TimeFilterObjects
     }
   
 
+//--------------------------------------------------------------------------------------------------------------------//
     
+
+ // Extract Start Date, End Date, and Appointment Date from the webpage
+    String startDate = driver.findElement(By.xpath("//md-input-container[label[text()='Start Date']]/input")).getDomAttribute("value");
+    String endDate = driver.findElement(By.xpath("//md-input-container[label[text()='End Date']]/input")).getDomAttribute("value");
+    String apptDate = driver.findElement(By.xpath("//td[@class='appt-date-column']")).getText(); // Adjust this XPath based on actual DOM
+    
+    
+ // Split the dates into MM, DD, YYYY parts
+    String[] startDateParts = startDate.split("/");
+    String[] endDateParts = endDate.split("/");
+    String[] apptDateParts = apptDate.split("/");
+    
+ // Convert to Integer for comparison
+    int startMonth = Integer.parseInt(startDateParts[0]);
+    int startDay = Integer.parseInt(startDateParts[1]);
+    int startYear = Integer.parseInt(startDateParts[2]);
+
+    int endMonth = Integer.parseInt(endDateParts[0]);
+    int endDay = Integer.parseInt(endDateParts[1]);
+    int endYear = Integer.parseInt(endDateParts[2]);
+
+    int apptMonth = Integer.parseInt(apptDateParts[0]);
+    int apptDay = Integer.parseInt(apptDateParts[1]);
+    int apptYear = Integer.parseInt(apptDateParts[2]);
+    
+    boolean isApptDateValid = (apptYear > startYear || (apptYear == startYear && apptMonth > startMonth) || 
+            (apptYear == startYear && apptMonth == startMonth && apptDay >= startDay))
+         && (apptYear < endYear || (apptYear == endYear && apptMonth < endMonth) || 
+            (apptYear == endYear && apptMonth == endMonth && apptDay <= endDay));
 }

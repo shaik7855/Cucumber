@@ -9,4 +9,7 @@ public class TimeFilterLocators
 	public static final String TimeFrameFilter_12_24 ="//span[contains(text(),'12 - 24 Hours Left')]"; //xpath
 	
 	public static final String Date_Range ="//span[contains(text(),'Date Range')]"; //xpath
+	
+	
+
 }

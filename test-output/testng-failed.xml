@@ -5,10 +5,10 @@
     <classes>
       <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
         <methods>
-          <include name="verifyUserLogin"/>
-          <include name="setup"/>
           <include name="tearDown"/>
           <include name="setup"/>
+          <include name="setup"/>
+          <include name="date"/>
         </methods>
       </class> <!-- MTMAutomation.DispatchTest.MTMDispatchTest -->
     </classes>
