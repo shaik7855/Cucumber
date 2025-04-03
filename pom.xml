@@ -91,6 +91,11 @@
     		<artifactId>selenium-testng-java</artifactId>
     		<version>0.0.1-SNAPSHOT</version>
     	</dependency>
+    	<dependency>
+    		<groupId>Tezo_Sample</groupId>
+    		<artifactId>Tezo_Sample</artifactId>
+    		<version>0.0.1-SNAPSHOT</version>
+    	</dependency>
     </dependencies>
  
 

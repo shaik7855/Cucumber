@@ -1,15 +1,16 @@
 package MTMAutomation.DispatchTest.Locators;
 import MTMAutomation.DispatchTest.Utilities.Base;
 
-public class DispatchLocators extends Base{
+public class DispatchLocators extends Base
+{
 
-	public final String dispatch_tab = "//a[text()='Dispatch']";
-	public final String lyft_tab = "//a[text()='Lyft']";
-	public final String member_id = "//input[@class='md-input ember-view']";
-	public final String search_btn="//button[text()='Search']";
-	public final String clear_btn="//button[text()='Clear']";
-	public final String close_icon= "//icon[@class='modal-close-icon']";
-	public final String olos_tab = "//a[text()='OLOS']";
+	public  final String dispatch_tab = "//a[text()='Dispatch']";
+	public  final String lyft_tab = "//a[text()='Lyft']";
+	public  final String member_id = "//input[@class='md-input ember-view']";
+	public  final String search_btn="//button[text()='Search']";
+	public  final String clear_btn="//button[text()='Clear']";
+	public  final String close_icon= "//icon[@class='modal-close-icon']";
+	public  final String olos_tab = "//a[text()='OLOS']";
 	//public final String comment_icon = "//td[text()='" + memberid + "']/ancestor::tr/child::td[3]";
 	public final String comment_icon ="//icon[@title='has remarks']";
 	public final String remarkclose_icon = "//icon[@class='modal-close-icon']";
