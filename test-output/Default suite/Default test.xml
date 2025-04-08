@@ -62,5 +62,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
   <testcase classname="MTMAutomation.DispatchTest.MTMDispatchTest" name="verifyTabsOnHomePage" time="0.0">
     <ignored/>
   </testcase> <!-- verifyTabsOnHomePage -->
-
 </testsuite> <!-- Default test -->

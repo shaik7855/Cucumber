@@ -16,12 +16,6 @@ import org.testng.Assert;
 import MTMAutomation.DispatchTest.Locators.Locators;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
 import MTMAutomation.DispatchTest.PageObjects.LoginObjects;
-
-import MTMAutomation.DispatchTest.PageObjects.StatusFilterObjects;
-import MTMAutomation.DispatchTest.PageObjects.TripReasonObjects;
-
-import MTMAutomation.DispatchTest.PageObjects.ColumnFilterObjects;
-
 import MTMAutomation.DispatchTest.PageObjects.DispatchObjects;
 import MTMAutomation.DispatchTest.PageObjects.DispatchPageObjects;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
@@ -287,8 +281,6 @@ public class MTMDispatchTest extends Base
 		
 		Assert.assertTrue(dp.titleDispatch().isDisplayed());
 	}
-
-
 	@Test	
 	public void verifyTabsOnHomePage()
 	{	
@@ -301,7 +293,6 @@ public class MTMDispatchTest extends Base
 		Assert.assertTrue(homePageObjects.olosTabVisibility() , "OLOS Tab is NOT visible"  );
 		System.out.println("OLOS tab is visible");
 	}
-
 
 
 	@Test
@@ -319,31 +310,36 @@ public class MTMDispatchTest extends Base
 	
 	Thread.sleep(2000); 
 	
+	//Clicking on Parked/Pending status and validating 
 	statusFilterObjects.selectParkedOrPending();
-	Assert.assertTrue(statusFilterObjects.isStatusFilterApplied("Parked") ||  statusFilterObjects.isStatusFilterApplied("Pending"), "Parked/Pending filter is not applied correctly!");
+	Assert.assertTrue(statusFilterObjects.isPendingStatusFilterApplied());
 	logger.info("Successfully Parked/Pending Filter Applied");
 	System.out.println("Successfully Parked/Pending Filter Applied");
 	
 	Thread.sleep(2000);
-
-	statusFilterObjects.selectReassigned();
 	
+	//Clicking on Reassigned status and validating 
+	statusFilterObjects.selectReassigned();
 	Thread.sleep(2000);
-	Assert.assertTrue(statusFilterObjects.isStatusFilterApplied("Reassigned") , "Reassigned filter is not applied correctly!");
+	Assert.assertTrue(statusFilterObjects.isReassignedStatusFilterApplied());
 	logger.info("Successfully Reassigned Filter Applied");
 	System.out.println("Successfully Reassigned Filter Applied");
 	
 	Thread.sleep(2000);
 	
+	//Clicking on Trip Bidding status and validating 
 	statusFilterObjects.selectTripBidding();
-	Assert.assertTrue(statusFilterObjects.isStatusFilterApplied("Trip Bidding"), "Trip Bidding filter is not applied correctly!");
+	Thread.sleep(2000);
+	Assert.assertTrue(statusFilterObjects.isTripBiddingStatusFilterApplied());
 	logger.info("Successfully Trip Bidding Filter Applied");
 	System.out.println("Successfully Trip Bidding Filter Applied");
 	
 	Thread.sleep(2000);
 	
+	//Clicking on All status and validating 
 	statusFilterObjects.selectAll();
-	Assert.assertTrue(statusFilterObjects.isStatusFilterApplied("ALL"), "All filter is not displaying all statuses!");
+	Thread.sleep(2000);
+	Assert.assertTrue(statusFilterObjects.isALLStatusFilterApplied());
 	logger.info("Successfully ALL Filter Applied");
 	System.out.println("Successfully Parked/Pending Filter Applied");
 	

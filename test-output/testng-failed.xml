@@ -8,11 +8,7 @@
           <include name="tearDown"/>
           <include name="setup"/>
           <include name="setup"/>
-
           <include name="verifyStatusFilter"/>
-
-          <include name="searchInAllColumnsFilter"/>
-
         </methods>
       </class> <!-- MTMAutomation.DispatchTest.MTMDispatchTest -->
     </classes>
