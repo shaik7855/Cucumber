@@ -228,8 +228,8 @@ public class TimeFilterObjects
     int apptDay = Integer.parseInt(apptDateParts[1]);
     int apptYear = Integer.parseInt(apptDateParts[2]);
     
-    boolean isApptDateValid = (apptYear > startYear || (apptYear == startYear && apptMonth > startMonth) || 
+   /* boolean isApptDateValid = (apptYear > startYear || (apptYear == startYear && apptMonth > startMonth) || 
             (apptYear == startYear && apptMonth == startMonth && apptDay >= startDay))
          && (apptYear < endYear || (apptYear == endYear && apptMonth < endMonth) || 
-            (apptYear == endYear && apptMonth == endMonth && apptDay <= endDay));
+            (apptYear == endYear && apptMonth == endMonth && apptDay <= endDay)); */
 }
