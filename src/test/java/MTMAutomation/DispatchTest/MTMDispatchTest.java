@@ -45,8 +45,7 @@ public class MTMDispatchTest extends Base
         driver.navigate().to(baseURL);
         verifyUserLogin();		
     }
-	
-	
+
 	public void verifyUserLogin() throws IOException, InterruptedException
 	{
 		try 
@@ -85,6 +84,7 @@ public class MTMDispatchTest extends Base
 		logger.info("Application is successfully opened");	
 	
     }
+
 	@Test
 	public void toVerifyTimeFrameFilter() throws InterruptedException
 	{
@@ -425,6 +425,7 @@ public class MTMDispatchTest extends Base
 		
 		Assert.assertTrue(dp.titleDispatch().isDisplayed());
 	}
+
 	@Test	
 	public void verifyTabsOnHomePage()
 	{	
