@@ -2,6 +2,14 @@
 <testng-results ignored="3" total="4" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
+  <suite started-at="2025-04-02T13:01:20 IST" name="Default suite" finished-at="2025-04-02T13:05:29 IST" duration-ms="248913">
+    <groups>
+    </groups>
+    <test started-at="2025-04-02T13:01:20 IST" name="Default test" finished-at="2025-04-02T13:05:29 IST" duration-ms="248913">
+      <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@27eedb64]" started-at="2025-04-02T13:01:20 IST" name="setup" finished-at="2025-04-02T13:01:26 IST" duration-ms="5987" status="PASS">
+=======
 
   <suite started-at="2025-04-02T00:40:57 IST" name="Default suite" finished-at="2025-04-02T00:42:06 IST" duration-ms="68322">
     <groups>
@@ -17,6 +25,7 @@
       <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
         <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@3212a8d7]" started-at="2025-03-30T05:47:40 IST" name="setup" finished-at="2025-03-30T05:47:43 IST" duration-ms="3690" status="PASS">
 
+>>>>>>> e09ac3b17d466e606dc11e75c9b63c3fa011df50
           <params>
             <param index="0">
               <value>
@@ -27,6 +36,17 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
+<<<<<<< HEAD
+        <test-method is-config="true" signature="setup()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@27eedb64]" started-at="2025-04-02T13:01:26 IST" name="setup" finished-at="2025-04-02T13:02:21 IST" duration-ms="55063" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="ClearAllButtonFunctionality()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@27eedb64]" started-at="2025-04-02T13:02:21 IST" name="ClearAllButtonFunctionality" finished-at="2025-04-02T13:05:28 IST" duration-ms="186737" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClearAllButtonFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@27eedb64]" started-at="2025-04-02T13:05:28 IST" name="tearDown" finished-at="2025-04-02T13:05:29 IST" duration-ms="1030" status="PASS">
+=======
 
         <test-method is-config="true" signature="setup()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7a1a3478]" started-at="2025-04-02T00:41:06 IST" name="setup" finished-at="2025-04-02T00:41:31 IST" duration-ms="24501" status="PASS">
           <reporter-output>
@@ -87,6 +107,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
         </test-method> <!-- searchInAllColumnsFilter -->
         <test-method is-config="true" signature="tearDown()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@3212a8d7]" started-at="2025-03-30T05:48:17 IST" name="tearDown" finished-at="2025-03-30T05:48:18 IST" duration-ms="504" status="PASS">
 
+>>>>>>> e09ac3b17d466e606dc11e75c9b63c3fa011df50
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

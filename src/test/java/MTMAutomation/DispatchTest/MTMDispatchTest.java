@@ -16,6 +16,10 @@ import org.testng.Assert;
 import MTMAutomation.DispatchTest.Locators.Locators;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
 import MTMAutomation.DispatchTest.PageObjects.LoginObjects;
+import MTMAutomation.DispatchTest.PageObjects.StatusFilterObjects;
+import MTMAutomation.DispatchTest.PageObjects.TripReasonObjects;
+import MTMAutomation.DispatchTest.PageObjects.TripReasonsObject;
+import MTMAutomation.DispatchTest.PageObjects.ColumnFilterObjects;
 import MTMAutomation.DispatchTest.PageObjects.DispatchObjects;
 import MTMAutomation.DispatchTest.PageObjects.DispatchPageObjects;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
@@ -45,21 +49,23 @@ public class MTMDispatchTest extends Base
 	
 	public void verifyUserLogin() throws IOException, InterruptedException
 	{
-	try {
-		wait.until(ExpectedConditions.elementToBeClickable(lo.username()));
-		lo.username().sendKeys(username);
-		logger.info("Entered Username");
-	}
-	catch(StaleElementReferenceException e)
-	{
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("loginfmt"))));
-		driver.findElement(By.name("loginfmt")).sendKeys(username);
-		logger.info("Entered Username");
-	}
+		try 
+		{
+			wait.until(ExpectedConditions.elementToBeClickable(lo.username()));
+			lo.username().sendKeys(username);
+			logger.info("Entered Username");
+		}
+		catch(StaleElementReferenceException e)
+		{
+			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("loginfmt"))));
+			driver.findElement(By.name("loginfmt")).sendKeys(username);
+			logger.info("Entered Username");
+		}
 		wait.until(ExpectedConditions.elementToBeClickable(lo.btnNext()));
 		action.moveToElement(lo.btnNext()).click().build().perform();
 		logger.info("Clicked on Next");
-			try {
+			try 
+			{
 				wait.until(ExpectedConditions.elementToBeClickable(lo.password()));
 				lo.password().sendKeys(password);
 				logger.info("Entered Password");
@@ -77,7 +83,92 @@ public class MTMDispatchTest extends Base
 		action.moveToElement(lo.btnYes()).click().build().perform();
 		logger.info("Clicked on yes button");
 		logger.info("Application is successfully opened");	
+	
     }
+	
+	
+	
+	@Test
+	public void ClearAllButtonFunctionality() throws InterruptedException
+	{
+		//---------------- TC 17 ----------------//
+
+		// Initialize Page Objects
+		HomePageObjects homePageObjects = new HomePageObjects(driver);
+		TripReasonsObject tripReasonsObject = new TripReasonsObject(driver);
+
+		//  Navigate to the Dispatch tab
+		homePageObjects.clickOnDispatchTab();
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL, "Dispatch tab URL is incorrect!");
+		logger.info("Successfully navigated to Dispatch tab");
+		System.out.println("Successfully navigated to Dispatch tab");
+
+		Thread.sleep(3000); 
+	    // Get Initial Record Count
+	    int initialRecordCount = tripReasonsObject.getRecordCount();
+	    System.out.println("Initial record count: " + initialRecordCount);
+
+		// Select Behavioral Health checkbox and verify
+		tripReasonsObject.clickOnBehavioralHealth();
+		System.out.println("Selected Behavioral Health");
+		int countAfterBehavioralHealth = tripReasonsObject.getRecordCount();
+	    System.out.println("Record count after selecting Behavioral Health: " + countAfterBehavioralHealth);
+		Assert.assertTrue(tripReasonsObject.isCheckboxSelected(tripReasonsObject.getBehavioralHealth()), "Behavioral Health checkbox is NOT selected!");
+		logger.info("Behavioral Health checkbox selected successfully.");
+		System.out.println("Behavioral Health checkbox selected successfully.");
+
+		// Select Chemotherapy checkbox and verify
+		tripReasonsObject.clickOnChemotherapy();
+		System.out.println("Selected Chemotherapy");
+		int countAfterChemotherapy = tripReasonsObject.getRecordCount();
+	    System.out.println("Record count after selecting Chemotherapy: " + countAfterChemotherapy);
+		Assert.assertTrue(tripReasonsObject.isCheckboxSelected(tripReasonsObject.getChemotherapy()), "Chemotherapy checkbox is NOT selected!");
+		logger.info("Chemotherapy checkbox selected successfully.");
+		System.out.println("Chemotherapy checkbox selected successfully.");
+
+		// Select Dialysis checkbox and verify
+		tripReasonsObject.clickOnDialysis();
+		System.out.println("Selected Dialysis");
+		int countAfterDialysis = tripReasonsObject.getRecordCount();
+	    System.out.println("Record count after selecting Dialysis: " + countAfterDialysis);
+		Assert.assertTrue(tripReasonsObject.isCheckboxSelected(tripReasonsObject.getDialysis()), "Dialysis checkbox is NOT selected!");
+		logger.info("Dialysis checkbox selected successfully.");
+		System.out.println("Dialysis checkbox selected successfully.");
+
+		// Select Hospital Discharge checkbox and verify
+		tripReasonsObject.clickOnHospitalDischarge();
+		System.out.println("Selected Hospital Discharge");
+		int countAfterHospitalDischarge = tripReasonsObject.getRecordCount();
+	    System.out.println("Record count after selecting Hospital Discharge: " + countAfterHospitalDischarge);
+		Assert.assertTrue(tripReasonsObject.isCheckboxSelected(tripReasonsObject.getHospitalDischarge()), "Hospital Discharge checkbox is NOT selected!");
+		logger.info("Hospital Discharge checkbox selected successfully.");
+		System.out.println("Hospital Discharge checkbox selected successfully.");
+
+		// Select Methadone checkbox and verify
+		tripReasonsObject.clickOnMethadone();
+		System.out.println("Selected Methadone");
+		int countAfterMethadone = tripReasonsObject.getRecordCount();
+	    System.out.println("Record count after selecting Methadone: " + countAfterMethadone);
+		Assert.assertTrue(tripReasonsObject.isCheckboxSelected(tripReasonsObject.getMethadone()), "Methadone checkbox is NOT selected!");
+		logger.info("Methadone checkbox selected successfully.");
+		System.out.println("Methadone checkbox selected successfully.");
+
+		// Click on "Clear All" button to remove all filters
+		tripReasonsObject.clickOnclearAllButton();
+		System.out.println("Clicked  Clear All button");
+		
+		// Get Record Count After Clicking "Clear All"
+	    int finalRecordCount = tripReasonsObject.getRecordCount();
+	    System.out.println("Record count after clicking 'Clear All': " + finalRecordCount);
+	    
+		// Verify all selected filters are cleared
+		Assert.assertTrue(tripReasonsObject.getSelectedFilters().isEmpty(), "Filters are NOT cleared after clicking 'Clear All'!");
+		logger.info("All filters successfully cleared.");
+		System.out.println("All filters successfully cleared.");
+
+	}
+	
+    
 	
 	public void verifyUserLogin_TC_01() throws IOException, InterruptedException
 	{
