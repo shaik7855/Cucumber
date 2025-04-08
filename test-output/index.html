@@ -50,7 +50,11 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+
+                    <span>C:\Users\viraj.s\AppData\Local\Temp\testng-eclipse-1088730396\testng-customsuite.xml</span>
+
                     <span>C:\Users\viraj.s\AppData\Local\Temp\testng-eclipse--1638075843\testng-customsuite.xml</span>
+
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,8 +106,13 @@
                     </span>
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
+
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="MTMAutomation.DispatchTest.MTMDispatchTest" class="method navigator-link" hash-for-method="verifyTripReasonsFilter">verifyTripReasonsFilter</a> <!-- method navigator-link -->
+
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="MTMAutomation.DispatchTest.MTMDispatchTest" class="method navigator-link" hash-for-method="searchInAllColumnsFilter">searchInAllColumnsFilter</a> <!-- method navigator-link -->
+
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -126,6 +135,11 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+
+                  <a name="verifyTripReasonsFilter">
+                  </a> <!-- verifyTripReasonsFilter -->
+                  <span class="method-name">verifyTripReasonsFilter</span>
+
                   <a name="searchInAllColumnsFilter">
                   </a> <!-- searchInAllColumnsFilter -->
                   <span class="method-name">searchInAllColumnsFilter</span>
@@ -162,6 +176,7 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 
 </div> <!-- stack-trace -->
+
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -169,7 +184,11 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+
+            <span class="header-content">C:\Users\viraj.s\AppData\Local\Temp\testng-eclipse-1088730396\testng-customsuite.xml</span>
+
             <span class="header-content">C:\Users\viraj.s\AppData\Local\Temp\testng-eclipse--1638075843\testng-customsuite.xml</span>
+
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -180,7 +199,11 @@
     &lt;classes&gt;
       &lt;class name=&quot;MTMAutomation.DispatchTest.MTMDispatchTest&quot;&gt;
         &lt;methods&gt;
+
+          &lt;include name=&quot;verifyTripReasonsFilter&quot;/&gt;
+
           &lt;include name=&quot;searchInAllColumnsFilter&quot;/&gt;
+
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- MTMAutomation.DispatchTest.MTMDispatchTest --&gt;
     &lt;/classes&gt;
@@ -224,14 +247,24 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
+
+data.setCell(0, 1, 'verifyTripReasonsFilter')
+data.setCell(0, 2, 'MTMAutomation.DispatchTest.MTMDispatchTest')
+data.setCell(0, 3, 34004);
+
 data.setCell(0, 1, 'searchInAllColumnsFilter')
 data.setCell(0, 2, 'MTMAutomation.DispatchTest.MTMDispatchTest')
 data.setCell(0, 3, 10074);
+
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
+
+              <span class="suite-total-time">Total running time: 34 seconds</span>
+
               <span class="suite-total-time">Total running time: 10 seconds</span>
+
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -252,11 +285,21 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">MTMAutomation.DispatchTest.MTMDispatchTest</span>
               <div class="ignored-methods-div">
+
+                <span class="ignored-method-name">verifyStatusFilter</span>
+                <br/>
+                <span class="ignored-method-name">verifyTabsOnHomePage</span>
+                <br/>
+                <span class="ignored-method-name">navigationBetweenTabs</span>
+                <br/>
+                <span class="ignored-method-name">verifyAllColumnsVisible</span>
+
                 <span class="ignored-method-name">verifyAllColumnsVisible</span>
                 <br/>
                 <span class="ignored-method-name">navigationBetweenTabs</span>
                 <br/>
                 <span class="ignored-method-name">verifyTabsOnHomePage</span>
+
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -275,6 +318,17 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
+
+                <span class="method-start">8875 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyTripReasonsFilter</span>
+                <span class="method-start">33386 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">67398 ms</span>
+
                 <span class="method-start">3718 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
@@ -286,6 +340,7 @@ return data;
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
                 <span class="method-start">37804 ms</span>
+
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

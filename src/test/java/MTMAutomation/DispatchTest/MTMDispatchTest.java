@@ -16,7 +16,12 @@ import org.testng.Assert;
 import MTMAutomation.DispatchTest.Locators.Locators;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
 import MTMAutomation.DispatchTest.PageObjects.LoginObjects;
+
+import MTMAutomation.DispatchTest.PageObjects.StatusFilterObjects;
+import MTMAutomation.DispatchTest.PageObjects.TripReasonObjects;
+
 import MTMAutomation.DispatchTest.PageObjects.ColumnFilterObjects;
+
 import MTMAutomation.DispatchTest.PageObjects.DispatchObjects;
 import MTMAutomation.DispatchTest.PageObjects.DispatchPageObjects;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
@@ -283,7 +288,8 @@ public class MTMDispatchTest extends Base
 		Assert.assertTrue(dp.titleDispatch().isDisplayed());
 	}
 
-@Test	
+
+	@Test	
 	public void verifyTabsOnHomePage()
 	{	
 		HomePageObjects homePageObjects  = new HomePageObjects(driver);
@@ -296,6 +302,94 @@ public class MTMDispatchTest extends Base
 		System.out.println("OLOS tab is visible");
 	}
 
+
+
+	@Test
+	public void verifyStatusFilter() throws InterruptedException 
+	{	
+	//------------TC_15------------// 
+	HomePageObjects homePageObjects = new HomePageObjects(driver);
+	StatusFilterObjects statusFilterObjects = new StatusFilterObjects(driver);
+
+    //  Click on Dispatch Tab
+	homePageObjects.clickOnDispatchTab();
+	Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL , "Dispatch tab URL is incorrect");
+	logger.info("Successfully navigated to Dispatch tab");
+	System.out.println("Successfully navigated to Dispatch tab");
+	
+	Thread.sleep(2000); 
+	
+	statusFilterObjects.selectParkedOrPending();
+	Assert.assertTrue(statusFilterObjects.isStatusFilterApplied("Parked") ||  statusFilterObjects.isStatusFilterApplied("Pending"), "Parked/Pending filter is not applied correctly!");
+	logger.info("Successfully Parked/Pending Filter Applied");
+	System.out.println("Successfully Parked/Pending Filter Applied");
+	
+	Thread.sleep(2000);
+
+	statusFilterObjects.selectReassigned();
+	
+	Thread.sleep(2000);
+	Assert.assertTrue(statusFilterObjects.isStatusFilterApplied("Reassigned") , "Reassigned filter is not applied correctly!");
+	logger.info("Successfully Reassigned Filter Applied");
+	System.out.println("Successfully Reassigned Filter Applied");
+	
+	Thread.sleep(2000);
+	
+	statusFilterObjects.selectTripBidding();
+	Assert.assertTrue(statusFilterObjects.isStatusFilterApplied("Trip Bidding"), "Trip Bidding filter is not applied correctly!");
+	logger.info("Successfully Trip Bidding Filter Applied");
+	System.out.println("Successfully Trip Bidding Filter Applied");
+	
+	Thread.sleep(2000);
+	
+	statusFilterObjects.selectAll();
+	Assert.assertTrue(statusFilterObjects.isStatusFilterApplied("ALL"), "All filter is not displaying all statuses!");
+	logger.info("Successfully ALL Filter Applied");
+	System.out.println("Successfully Parked/Pending Filter Applied");
+	
+	
+	}
+	
+	@Test
+	public void verifyTripReasonsFilter()
+	{	
+	//------------TC_16------------// 
+	HomePageObjects homePageObjects = new HomePageObjects(driver);
+	TripReasonObjects tripReasonObjects =  new TripReasonObjects (driver);
+	
+    //  Click on Dispatch Tab
+	homePageObjects.clickOnDispatchTab();
+	Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL , "Dispatch tab URL is incorrect");
+	logger.info("Successfully navigated to Dispatch tab");
+	System.out.println("Successfully navigated to Dispatch tab");
+	
+	
+	tripReasonObjects.selectBehavioralHealth();
+	Assert.assertTrue(tripReasonObjects.isTripReasonFilterApplied("Behavioral Health"), "Trip Reason filter is not applied correctly.");
+	logger.info("Successfully Behavioral Health Filter Applied");
+	System.out.println("Successfully Behavioral Health Filter Applied");
+	
+	tripReasonObjects.selectChemotherapy();
+	Assert.assertTrue(tripReasonObjects.isTripReasonFilterApplied("Chemotherapy"), "Chemotherapy filter is not applied correctly.");
+	logger.info("Successfully Chemotherapy Filter Applied");
+	System.out.println("Successfully Chemotherapy Filter Applied");
+	
+	tripReasonObjects.selectDialysis();
+	Assert.assertTrue(tripReasonObjects.isTripReasonFilterApplied("Dialysis"), "Chemotherapy filter is not applied correctly.");
+	logger.info("Successfully Dialysis Filter Applied");
+	System.out.println("Successfully Dialysis Filter Applied");
+	
+	tripReasonObjects.selectHospitalDischarge();
+	Assert.assertTrue(tripReasonObjects.isTripReasonFilterApplied("Hospital - Discharge"), "Chemotherapy filter is not applied correctly.");
+	logger.info("Successfully Hospital Discharge Filter Applied");
+	System.out.println("Successfully Hospital Discharge Filter Applied");
+	
+	tripReasonObjects.selectMethadone();
+	Assert.assertTrue(tripReasonObjects.isTripReasonFilterApplied("Methadone"), "Chemotherapy filter is not applied correctly.");
+	logger.info("Successfully Methadone Filter Applied");
+	System.out.println("Successfully Methadone Filter Applied");
+	
+	}
 	@Test
 	public void searchInAllColumnsFilter () throws InterruptedException
 	{

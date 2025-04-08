@@ -2,12 +2,21 @@
 <testng-results ignored="3" total="4" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
+
+  <suite started-at="2025-04-02T00:40:57 IST" name="Default suite" finished-at="2025-04-02T00:42:06 IST" duration-ms="68322">
+    <groups>
+    </groups>
+    <test started-at="2025-04-02T00:40:57 IST" name="Default test" finished-at="2025-04-02T00:42:06 IST" duration-ms="68322">
+      <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7a1a3478]" started-at="2025-04-02T00:40:57 IST" name="setup" finished-at="2025-04-02T00:41:06 IST" duration-ms="8852" status="PASS">
+
   <suite started-at="2025-03-30T05:47:40 IST" name="Default suite" finished-at="2025-03-30T05:48:18 IST" duration-ms="38341">
     <groups>
     </groups>
     <test started-at="2025-03-30T05:47:40 IST" name="Default test" finished-at="2025-03-30T05:48:18 IST" duration-ms="38341">
       <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
         <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@3212a8d7]" started-at="2025-03-30T05:47:40 IST" name="setup" finished-at="2025-03-30T05:47:43 IST" duration-ms="3690" status="PASS">
+
           <params>
             <param index="0">
               <value>
@@ -18,6 +27,17 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
+
+        <test-method is-config="true" signature="setup()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7a1a3478]" started-at="2025-04-02T00:41:06 IST" name="setup" finished-at="2025-04-02T00:41:31 IST" duration-ms="24501" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyTripReasonsFilter()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7a1a3478]" started-at="2025-04-02T00:41:31 IST" name="verifyTripReasonsFilter" finished-at="2025-04-02T00:42:05 IST" duration-ms="34004" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTripReasonsFilter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7a1a3478]" started-at="2025-04-02T00:42:05 IST" name="tearDown" finished-at="2025-04-02T00:42:06 IST" duration-ms="880" status="PASS">
+
         <test-method is-config="true" signature="setup()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@3212a8d7]" started-at="2025-03-30T05:47:43 IST" name="setup" finished-at="2025-03-30T05:48:07 IST" duration-ms="24006" status="PASS">
           <reporter-output>
           </reporter-output>
@@ -66,6 +86,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </reporter-output>
         </test-method> <!-- searchInAllColumnsFilter -->
         <test-method is-config="true" signature="tearDown()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@3212a8d7]" started-at="2025-03-30T05:48:17 IST" name="tearDown" finished-at="2025-03-30T05:48:18 IST" duration-ms="504" status="PASS">
+
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
