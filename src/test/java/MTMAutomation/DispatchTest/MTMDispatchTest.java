@@ -45,76 +45,42 @@ public class MTMDispatchTest extends Base
 	
 	public void verifyUserLogin() throws IOException, InterruptedException
 	{
-	try {
-		wait.until(ExpectedConditions.elementToBeClickable(lo.username()));
-		lo.username().sendKeys(username);
-		logger.info("Entered Username");
-	}
-	catch(StaleElementReferenceException e)
-	{
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("loginfmt"))));
-		driver.findElement(By.name("loginfmt")).sendKeys(username);
-		logger.info("Entered Username");
-	}
-		wait.until(ExpectedConditions.elementToBeClickable(lo.btnNext()));
-		action.moveToElement(lo.btnNext()).click().build().perform();
-		logger.info("Clicked on Next");
-			try {
+		try {
+				wait.until(ExpectedConditions.elementToBeClickable(lo.username()));
+				lo.username().sendKeys(username);
+				logger.info("Entered Username");
+			}
+		catch(StaleElementReferenceException e)
+			{
+				wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("loginfmt"))));
+				driver.findElement(By.name("loginfmt")).sendKeys(username);
+				logger.info("Entered Username");
+			}
+				wait.until(ExpectedConditions.elementToBeClickable(lo.btnNext()));
+				action.moveToElement(lo.btnNext()).click().build().perform();
+				logger.info("Clicked on Next");
+		try {
 				wait.until(ExpectedConditions.elementToBeClickable(lo.password()));
 				lo.password().sendKeys(password);
 				logger.info("Entered Password");
 			}
-			catch(StaleElementReferenceException e){
+		catch(StaleElementReferenceException e)
+			{
 				wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("passwd"))));
 				driver.findElement(By.name("passwd")).sendKeys(password);
 				logger.info("Entered Password");
 			}
-		wait.until(ExpectedConditions.elementToBeClickable(lo.btnSignIn()));
-		action.moveToElement(lo.btnSignIn()).click().build().perform();
-		logger.info("Clicked on Sign in button");
-		
-		wait.until(ExpectedConditions.elementToBeClickable(lo.btnYes()));
-		action.moveToElement(lo.btnYes()).click().build().perform();
-		logger.info("Clicked on yes button");
-		logger.info("Application is successfully opened");	
+				wait.until(ExpectedConditions.elementToBeClickable(lo.btnSignIn()));
+				action.moveToElement(lo.btnSignIn()).click().build().perform();
+				logger.info("Clicked on Sign in button");
+				
+				wait.until(ExpectedConditions.elementToBeClickable(lo.btnYes()));
+				action.moveToElement(lo.btnYes()).click().build().perform();
+				logger.info("Clicked on yes button");
+				logger.info("Application is successfully opened");	
     }
 	
-	public void verifyUserLogin_TC_01() throws IOException, InterruptedException
-	{
-		try {
-			wait.until(ExpectedConditions.elementToBeClickable(lo.username()));
-			lo.username().sendKeys(username);
-			logger.info("Entered Username");
-		}
-		catch(StaleElementReferenceException e){
-			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("loginfmt"))));
-			driver.findElement(By.name("loginfmt")).sendKeys(username);
-			logger.info("Entered Username");
-		}
-		wait.until(ExpectedConditions.elementToBeClickable(lo.btnNext()));
-		action.moveToElement(lo.btnNext()).click().build().perform();
-		logger.info("Clicked on Next");
-		try {
-			wait.until(ExpectedConditions.elementToBeClickable(lo.password()));
-			lo.password().sendKeys(password);
-			logger.info("Entered Password");
-		}
-		catch(StaleElementReferenceException e){
-			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("passwd"))));
-			driver.findElement(By.name("passwd")).sendKeys(password);
-			logger.info("Entered Password");
-		}
-		wait.until(ExpectedConditions.elementToBeClickable(lo.btnSignIn()));
-		action.moveToElement(lo.btnSignIn()).click().build().perform();
-		logger.info("Clicked on Sign in button");
-		
-		wait.until(ExpectedConditions.elementToBeClickable(lo.btnYes()));
-		action.moveToElement(lo.btnYes()).click().build().perform();
-		logger.info("Clicked on yes button");
-		logger.info("Application is successfully opened");	
-		Thread.sleep(2000);
-		Assert.assertTrue(lo.getLogoImg().isDisplayed());
-    }
+	
 
 	
 	public void verifyRecordSelection() throws InterruptedException
@@ -191,7 +157,7 @@ public class MTMDispatchTest extends Base
 	}
 	
 
-
+	@Test(enabled = false)
 	public void verifySignOut_TC_09() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.btnSignOut()));
@@ -205,6 +171,7 @@ public class MTMDispatchTest extends Base
 		
 	}
 
+	
 	public void verifyLYFTSearchNoData_TC_12() throws IOException, InterruptedException
 	{
 		
@@ -212,13 +179,13 @@ public class MTMDispatchTest extends Base
 		
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabLyft()));
 		action.moveToElement(dp.tabLyft()).click().build().perform();
-		logger.info("Redirected to Lyft Page");	
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.LYFT_URL, "Lyft tab URL is incorrect!");
+		logger.info("Successfully navigated to Lyft tab");
 		Thread.sleep(2000);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(dp.searchBtn()));
 		action.moveToElement(dp.searchBtn()).click().build().perform();
 		logger.info("Clicked on search button");
-		
 		Assert.assertEquals(dp.getSearchErrormsg().getText(), searcherrormsg);
 		
 	}
@@ -229,7 +196,8 @@ public class MTMDispatchTest extends Base
 		String remark_value = "Remark Added";
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabDispatch()));
 		action.moveToElement(dp.tabDispatch()).click().build().perform();
-		logger.info("Redirected to Dispatch Page");
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.LYFT_URL, "Lyft tab URL is incorrect!");
+		logger.info("Successfully navigated to Lyft tab");
 		Thread.sleep(2000);	
 		
 		WebElement commentbox = driver.findElement(By.xpath("//td[text()='" + memberid + "']/ancestor::tr/child::td[3]"));
@@ -254,12 +222,15 @@ public class MTMDispatchTest extends Base
 	{		
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabDispatch()));
 		action.moveToElement(dp.tabDispatch()).click().build().perform();
-		logger.info("Redirected to Dispatch Page");
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.LYFT_URL, "Lyft tab URL is incorrect!");
+		logger.info("Successfully navigated to Lyft tab");
 		Thread.sleep(2000);	
+		
 		WebElement commentbox = driver.findElement(By.xpath("//td[text()='" + memberid + "']/ancestor::tr/child::td[3]"));
 		wait.until(ExpectedConditions.elementToBeClickable(commentbox));
 		action.moveToElement(commentbox).click().build().perform();
 		logger.info("Comment icon clicked");	
+		
 		Assert.assertFalse(dp.btnRemarkAdd().isEnabled());	
 	}
 
@@ -267,7 +238,8 @@ public class MTMDispatchTest extends Base
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabDispatch()));
 		action.moveToElement(dp.tabDispatch()).click().build().perform();
-		logger.info("Redirected to Dispatch Page");
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.LYFT_URL, "Lyft tab URL is incorrect!");
+		logger.info("Successfully navigated to Lyft tab");
 		Thread.sleep(2000);	
 		
 		WebElement commentbox = driver.findElement(By.xpath("//td[text()='" + memberid + "']/ancestor::tr/child::td[3]"));
@@ -300,7 +272,8 @@ public class MTMDispatchTest extends Base
 	{	
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabOlos()));
 		action.moveToElement(dp.tabOlos()).click().build().perform();
-		logger.info("Clicked on Olos tab");
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.OLOS_URL , "OLOS tab URL is incorrect!");
+		logger.info("Successfully navigated to OLOS tab");
 		
 		wait.until(ExpectedConditions.elementToBeClickable(dp.setFirstName()));
 		dp.setFirstName().sendKeys(firstname);
@@ -329,11 +302,14 @@ public class MTMDispatchTest extends Base
 		Assert.assertTrue(dp.setDOB().getText().isEmpty());
 		
 	}
+
+	@Test(enabled = false)
 	public void verifyOLOSSearch_TC_08() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabOlos()));
 		action.moveToElement(dp.tabOlos()).click().build().perform();
-		logger.info("Clicked on Olos tab");
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.OLOS_URL , "OLOS tab URL is incorrect!");
+		logger.info("Successfully navigated to OLOS tab");
 		
 		wait.until(ExpectedConditions.elementToBeClickable(dp.setFirstName()));
 		dp.setFirstName().sendKeys(firstname);
@@ -355,12 +331,14 @@ public class MTMDispatchTest extends Base
 		action.moveToElement(dp.searchBtn()).click().build().perform();
 		logger.info("Clicked on search button");
 	}
+	
 @Test	
 	public void verifyLYFTClear_TC_13() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabLyft()));
 		action.moveToElement(dp.tabLyft()).click().build().perform();
-		logger.info("Redirected to Lyft Page");	
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.LYFT_URL , "LYFT tab URL is incorrect!");
+		logger.info("Successfully navigated to LYFT tab");	
 		Thread.sleep(2000);
 		
 		try {
@@ -401,12 +379,14 @@ public class MTMDispatchTest extends Base
 		Assert.assertTrue(dp.setPhone().getText().isEmpty());
 		Assert.assertTrue(dp.setDOB().getText().isEmpty());			
 	}
-@Test
+
+	@Test
 	public void verifyLYFTSearch_TC_05() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabLyft()));
 		action.moveToElement(dp.tabLyft()).click().build().perform();
-		logger.info("Redirected to Lyft Page");	
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.LYFT_URL , "LYFT tab URL is incorrect!");
+		logger.info("Successfully navigated to LYFT tab");		
 		Thread.sleep(2000);
 		
 		try {
