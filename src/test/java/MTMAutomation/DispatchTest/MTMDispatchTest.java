@@ -85,7 +85,60 @@ public class MTMDispatchTest extends Base
 		logger.info("Application is successfully opened");	
 	
     }
-	
+	@Test
+	public void toVerifyTimeFrameFilter() throws InterruptedException
+	{
+		//--------TC 14 ---------//
+		// Creating objects for HomePage and DispatchPage
+		HomePageObjects homePageObjects = new HomePageObjects(driver);
+		TimeFilterObjects timeFilterObjects = new TimeFilterObjects(driver);
+
+		// Creating an explicit wait instance
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+		// Navigating to the Dispatch tab
+		homePageObjects.clickOnDispatchTab();
+		wait.until(ExpectedConditions.urlToBe(Locators.DISPATCH_URL));
+		
+		// Fetching initial record count before applying any filters
+		int initialRecordCount = timeFilterObjects.getRecordCount();
+		logger.info("Initial record count: " + initialRecordCount);
+		System.out.println("Initial record count: " + initialRecordCount);
+
+		// Applying Time Frame Filter (0-6 hours)
+		timeFilterObjects.clickOnTimeFrameFilter_0_6();
+		Thread.sleep(3000); // Wait for filter to be applied
+		boolean isFilterApplied_0_6 = timeFilterObjects.isTimeFrameFilterApplied_0_6();
+		Assert.assertTrue(isFilterApplied_0_6, "Time frame filter (0-6 hours) is not applied correctly");
+		logger.info("Successfully applied 0-6 hours filter");
+		System.out.println("Successfully applied 0-6 hours filter");
+
+		// Applying Time Frame Filter (6-12 hours)
+		Thread.sleep(3000); 
+		timeFilterObjects.clickOnTimeFrameFilter_6_12();
+		Thread.sleep(3000);
+		boolean isFilterApplied_6_12 = timeFilterObjects.isTimeFrameFilterApplied_6_12();
+		Assert.assertTrue(isFilterApplied_6_12, "Time frame filter (6-12 hours) is not applied correctly");
+		logger.info("Successfully applied 6-12 hours filter");
+		System.out.println("Successfully applied 6-12 hours filter");
+
+		// Applying Time Frame Filter (12-24 hours)
+		Thread.sleep(3000);
+		timeFilterObjects.clickOnTimeFrameFilter_12_24();
+		Thread.sleep(3000);
+		boolean isFilterApplied_12_24 = timeFilterObjects.isTimeFrameFilterApplied_12_24();
+		Assert.assertTrue(isFilterApplied_12_24, "Time frame filter (12-24 hours) is not applied correctly");
+		logger.info("Successfully applied 12-24 hours filter");
+		System.out.println("Successfully applied 12-24 hours filter");
+
+		// Applying Date Range Filter
+		timeFilterObjects.clickOnDateRangeFilter();
+		Thread.sleep(3000);
+		logger.info("Successfully applied Date Range filter");
+		System.out.println("Successfully applied Date Range filter");
+
+	}
+
 	
 	
 	@Test
@@ -104,7 +157,8 @@ public class MTMDispatchTest extends Base
 		System.out.println("Successfully navigated to Dispatch tab");
 
 		Thread.sleep(3000); 
-	    // Get Initial Record Count
+
+		// Get Initial Record Count
 	    int initialRecordCount = tripReasonsObject.getRecordCount();
 	    System.out.println("Initial record count: " + initialRecordCount);
 
@@ -168,7 +222,6 @@ public class MTMDispatchTest extends Base
 
 	}
 	
-    
 	
 	public void verifyUserLogin_TC_01() throws IOException, InterruptedException
 	{
