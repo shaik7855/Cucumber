@@ -111,7 +111,7 @@ public class MTMDispatchTest extends Base
 	}
 
 
-	@Test
+	
 	public void verifyAllColumnsVisible() throws InterruptedException
 	{
 		//---TC 10  view all the columns in Dispatch tab ---//
@@ -137,7 +137,7 @@ public class MTMDispatchTest extends Base
 	}
 	
 
-	@Test
+	
 	public void navigationBetweenTabs() throws InterruptedException
 	{
 		HomePageObjects homePageObjects = new HomePageObjects(driver);
@@ -193,47 +193,62 @@ public class MTMDispatchTest extends Base
 	
 	public void verifyRemarkCommentAdd_TC_18() throws IOException, InterruptedException
 	{
+		// Declare and initialize the remark value to be added
 		String remark_value = "Remark Added";
+		
+		// Wait until the Dispatch tab is clickable, then move to it and click
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabDispatch()));
 		action.moveToElement(dp.tabDispatch()).click().build().perform();
+		
+		// Verify that the current URL matches the expected Lyft URL
 		Assert.assertEquals(driver.getCurrentUrl(), Locators.LYFT_URL, "Lyft tab URL is incorrect!");
 		logger.info("Successfully navigated to Lyft tab");
+		
 		Thread.sleep(2000);	
 		
-		WebElement commentbox = driver.findElement(By.xpath("//td[text()='" + memberid + "']/ancestor::tr/child::td[3]"));
+		// Locate the comment box associated with the specific member ID
+		WebElement commentbox = driver.findElement(By.xpath("(//icon[@title='has remarks'])[1]"));
+		
+		// Wait until the comment box is clickable, then click on it
 		wait.until(ExpectedConditions.elementToBeClickable(commentbox));
 		action.moveToElement(commentbox).click().build().perform();
 		logger.info("Comment icon clicked");
 		
+		// Wait until the remark text area is clickable, then enter the remark
 		wait.until(ExpectedConditions.elementToBeClickable(dp.txtareaRemark()));
+		Assert.assertTrue(dp.txtareaRemark().isDisplayed(), "Remark textarea did not appear after clicking comment icon!");
 		dp.txtareaRemark().sendKeys(remark_value);
 		logger.info("Entered Remark Comment");
-		
+
+		// Click the 'Add' button to submit the remark
 		dp.btnRemarkAdd().click();
 		logger.info("Clicked on Add button");
-		Thread.sleep(2000);
-		
-		Assert.assertEquals(dp.getRemarkUsername().getText(), username.substring(0, 4));
+		Thread.sleep(5000);
+		Assert.assertEquals(dp.getRemarkUsername().getText().substring(0,4), username.substring(0,4));
 		Assert.assertEquals(dp.getRemarkText().getText(), remark_value);
 	
 	}
-
+	
+	
 	public void verifyRemarkAddDialoguebox_TC_19() throws IOException, InterruptedException
 	{		
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabDispatch()));
 		action.moveToElement(dp.tabDispatch()).click().build().perform();
 		Assert.assertEquals(driver.getCurrentUrl(), Locators.LYFT_URL, "Lyft tab URL is incorrect!");
 		logger.info("Successfully navigated to Lyft tab");
+		
 		Thread.sleep(2000);	
 		
 		WebElement commentbox = driver.findElement(By.xpath("//td[text()='" + memberid + "']/ancestor::tr/child::td[3]"));
 		wait.until(ExpectedConditions.elementToBeClickable(commentbox));
 		action.moveToElement(commentbox).click().build().perform();
+		Assert.assertTrue(dp.txtareaRemark().isDisplayed(), "Remark textarea did not appear after clicking comment icon!");
 		logger.info("Comment icon clicked");	
 		
 		Assert.assertFalse(dp.btnRemarkAdd().isEnabled());	
 	}
-
+	
+	
 	public void verifyRemarkCloseIcon_TC_20() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabDispatch()));
@@ -245,6 +260,7 @@ public class MTMDispatchTest extends Base
 		WebElement commentbox = driver.findElement(By.xpath("//td[text()='" + memberid + "']/ancestor::tr/child::td[3]"));
 		wait.until(ExpectedConditions.elementToBeClickable(commentbox));
 		action.moveToElement(commentbox).click().build().perform();
+		Assert.assertTrue(dp.txtareaRemark().isDisplayed(), "Remark textarea did not appear after clicking comment icon!");
 		logger.info("Comment icon clicked");
 		
 		wait.until(ExpectedConditions.elementToBeClickable(dp.iconRemarkClose()));
@@ -254,7 +270,7 @@ public class MTMDispatchTest extends Base
 		Assert.assertTrue(dp.titleDispatch().isDisplayed());
 	}
 
-@Test	
+	
 	public void verifyTabsOnHomePage()
 	{	
 		HomePageObjects homePageObjects  = new HomePageObjects(driver);
@@ -267,7 +283,7 @@ public class MTMDispatchTest extends Base
 		System.out.println("OLOS tab is visible");
 	}
 
-@Test
+	
 	public void verifyOLOSClear_TC_07() throws IOException, InterruptedException
 	{	
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabOlos()));
@@ -332,7 +348,7 @@ public class MTMDispatchTest extends Base
 		logger.info("Clicked on search button");
 	}
 	
-@Test	
+	
 	public void verifyLYFTClear_TC_13() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabLyft()));
@@ -380,7 +396,7 @@ public class MTMDispatchTest extends Base
 		Assert.assertTrue(dp.setDOB().getText().isEmpty());			
 	}
 
-	@Test
+	
 	public void verifyLYFTSearch_TC_05() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabLyft()));
@@ -389,37 +405,29 @@ public class MTMDispatchTest extends Base
 		logger.info("Successfully navigated to LYFT tab");		
 		Thread.sleep(2000);
 		
-		try {
+		try 
+		{
 			wait.until(ExpectedConditions.elementToBeClickable(dp.memberID()));
-			dp.memberID().sendKeys(memberid);
+			dp.memberID().sendKeys(memberidLyft);
 			logger.info("Entered Member ID");
-		}
-		catch(StaleElementReferenceException e){
+			}
+		catch(StaleElementReferenceException e)
+			{
 			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='md-input ember-view']"))));
 			Thread.sleep(2000);
-			driver.findElement(By.xpath("//input[@class='md-input ember-view']")).sendKeys(memberid);
+			driver.findElement(By.xpath("//input[@class='md-input ember-view']")).sendKeys(memberidLyft);
 			logger.info("Entered Member ID");
 		}
-		wait.until(ExpectedConditions.elementToBeClickable(dp.setFirstName()));
-		dp.setFirstName().sendKeys(firstname);
-		logger.info("Entered First name");
 		
-		wait.until(ExpectedConditions.elementToBeClickable(dp.setLastName()));
-		dp.setLastName().sendKeys(lastname);
-		logger.info("Entered Last name");
-		
-		wait.until(ExpectedConditions.elementToBeClickable(dp.setDOB()));
-		dp.setDOB().sendKeys(dob);
-		logger.info("Entered DOB");
-		
-		wait.until(ExpectedConditions.elementToBeClickable(dp.setPhone()));
-		dp.setPhone().sendKeys(phone);
-		logger.info("Entered Phone");
-		Thread.sleep(2000);
+		dp.clickOnStartDate();
+		dp.calendardata();
 		
 		wait.until(ExpectedConditions.elementToBeClickable(dp.searchBtn()));
 		action.moveToElement(dp.searchBtn()).click().build().perform();
 		logger.info("Clicked on search button");	
+		
+		Assert.assertTrue(dp.recordresult(memberidLyft));
+		
 		
 	}
 

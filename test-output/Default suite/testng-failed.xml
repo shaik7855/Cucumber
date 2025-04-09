@@ -5,9 +5,9 @@
     <classes>
       <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
         <methods>
-          <include name="setup"/>
           <include name="tearDown"/>
-          <include name="verifyAllColumnsVisible"/>
+          <include name="setup"/>
+          <include name="verifyLYFTSearch_TC_05"/>
           <include name="setup"/>
         </methods>
       </class> <!-- MTMAutomation.DispatchTest.MTMDispatchTest -->
