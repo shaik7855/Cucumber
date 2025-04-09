@@ -3,10 +3,11 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="MTMAutomation.DispatchTest.MTMDispatchTest"/>
-      <methods>
-                    <include name="toVerifyTimeFrameFilter"/>
-                </methods>
+      <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
+        <methods>
+          <include name="google"/>
+        </methods>
+      </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
