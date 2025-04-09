@@ -17,6 +17,7 @@ import MTMAutomation.DispatchTest.Locators.Locators;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
 import MTMAutomation.DispatchTest.PageObjects.LoginObjects;
 import MTMAutomation.DispatchTest.PageObjects.StatusFilterObjects;
+import MTMAutomation.DispatchTest.PageObjects.TimeFilterObjects;
 import MTMAutomation.DispatchTest.PageObjects.TripReasonObjects;
 import MTMAutomation.DispatchTest.PageObjects.TripReasonsObject;
 import MTMAutomation.DispatchTest.PageObjects.ColumnFilterObjects;
@@ -565,6 +566,14 @@ public class MTMDispatchTest extends Base
 	    Assert.assertTrue(columnFilterObjects.isFilterApplied("56747261"), "Trip filter failed!");
 		System.out.println("Trip filter Applied Succesfully");
 
+	}
+	
+	@Test
+	public void google() throws InterruptedException
+	{
+		driver.navigate().to("https://www.google.com");
+		Thread.sleep(15000);
+		
 	}
 
 }
