@@ -430,5 +430,44 @@ public class MTMDispatchTest extends Base
 		
 		
 	}
+	
+	@Test(enabled = false)
+	public void verfiyLocationOfTheTips() throws IOException, InterruptedException
+	{
+		wait.until(ExpectedConditions.elementToBeClickable(dp.tabLyft()));
+		action.moveToElement(dp.tabLyft()).click().build().perform();
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.LYFT_URL , "LYFT tab URL is incorrect!");
+		logger.info("Successfully navigated to LYFT tab");		
+		Thread.sleep(2000);
+		
+		try 
+		{
+			wait.until(ExpectedConditions.elementToBeClickable(dp.memberID()));
+			dp.memberID().sendKeys(memberidLyft);
+			logger.info("Entered Member ID");
+			}
+		catch(StaleElementReferenceException e)
+			{
+			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//input[@class='md-input ember-view']"))));
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//input[@class='md-input ember-view']")).sendKeys(memberidLyft);
+			logger.info("Entered Member ID");
+		}
+		
+		dp.clickOnStartDate();
+		dp.calendardata();
+		
+		wait.until(ExpectedConditions.elementToBeClickable(dp.searchBtn()));
+		action.moveToElement(dp.searchBtn()).click().build().perform();
+		logger.info("Clicked on search button");	
+		
+		Assert.assertTrue(dp.recordresult(memberidLyft));
+		
+		dp.clickOnViewButton();
+		
+		Assert.assertTrue(dp.recordresult(memberidLyft));
+		
+		dp.clickOnMapButton();
+	}
 
 }
