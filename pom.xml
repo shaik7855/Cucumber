@@ -86,16 +86,6 @@
     <artifactId>webdrivermanager</artifactId>
     <version>5.9.3</version>
 </dependency>
-    	<dependency>
-    		<groupId>com.automationframeworks</groupId>
-    		<artifactId>selenium-testng-java</artifactId>
-    		<version>0.0.1-SNAPSHOT</version>
-    	</dependency>
-    	<dependency>
-    		<groupId>Tezo_Sample</groupId>
-    		<artifactId>Tezo_Sample</artifactId>
-    		<version>0.0.1-SNAPSHOT</version>
-    	</dependency>
     </dependencies>
  
 
