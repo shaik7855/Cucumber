@@ -3,8 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="MTMAutomation.DispatchTest.AppTest"/>
-      <class name="MTMAutomation.DispatchTest.Utilities.Base"/>
+      <class name="MTMAutomation.DispatchTest.MTMDispatchTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
