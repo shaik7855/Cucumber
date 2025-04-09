@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import MTMAutomation.DispatchTest.Locators.HomePageLocators;
-import io.netty.handler.timeout.TimeoutException;
+//import io.netty.handler.timeout.TimeoutException;
 import org.openqa.selenium.TimeoutException;
 import MTMAutomation.DispatchTest.Locators.HomePageLocators;
 
@@ -107,24 +107,24 @@ public class HomePageObjects {
     
     @FindBy(xpath = HomePageLocators.LYFT_Tab)
     @CacheLookup
-	 WebElement lyftTab;
+	 WebElement lyftTAB;
     
     public  boolean lyftTabTabVisibility()
     {
-    	return lyftTab.isDisplayed();
+    	return lyftTAB.isDisplayed();
     }
     
     
  //-------------------------------OLOS Tab visibility---------------------------------//
 
     
-    @FindBy(xpath = HomePageLocators.OLOS_Tab)
+    /*@FindBy(xpath = HomePageLocators.OLOS_Tab)
     @CacheLookup
-	 WebElement olosTab;
+	 WebElement olosTAB;
     
     public  boolean OLOSTabTabVisibility()
     {
-    	return olosTab.isDisplayed();
-    }
+    	return olosTAB.isDisplayed();
+    }*/
     
 }
