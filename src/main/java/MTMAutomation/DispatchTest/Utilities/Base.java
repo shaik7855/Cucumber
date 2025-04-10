@@ -24,6 +24,11 @@ public class Base {
 	public String username=readconfig.getProperty("username");
 	public String password=readconfig.getProperty("password");
 	public String memberid=readconfig.getProperty("memberid");
+	public String memberidLyft=readconfig.getProperty("memberidLyft");
+	public String firstname = readconfig.getProperty("firstname");
+	public String lastname = readconfig.getProperty("lastname");
+	public String phone = readconfig.getProperty("phone");
+	public String dob=readconfig.getProperty("dob");
 	//------------------------------------------------------------------------------------------------------
 	
 	public WebDriver driver;
