@@ -16,6 +16,11 @@ import org.testng.Assert;
 import MTMAutomation.DispatchTest.Locators.Locators;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
 import MTMAutomation.DispatchTest.PageObjects.LoginObjects;
+import MTMAutomation.DispatchTest.PageObjects.StatusFilterObjects;
+import MTMAutomation.DispatchTest.PageObjects.TimeFilterObjects;
+import MTMAutomation.DispatchTest.PageObjects.TripReasonObjects;
+import MTMAutomation.DispatchTest.PageObjects.TripReasonsObject;
+import MTMAutomation.DispatchTest.PageObjects.ColumnFilterObjects;
 import MTMAutomation.DispatchTest.PageObjects.DispatchObjects;
 import MTMAutomation.DispatchTest.PageObjects.DispatchPageObjects;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
@@ -41,25 +46,26 @@ public class MTMDispatchTest extends Base
         driver.navigate().to(baseURL);
         verifyUserLogin();		
     }
-	
-	
+
 	public void verifyUserLogin() throws IOException, InterruptedException
 	{
-		try {
-				wait.until(ExpectedConditions.elementToBeClickable(lo.username()));
-				lo.username().sendKeys(username);
-				logger.info("Entered Username");
-			}
+		try 
+		{
+			wait.until(ExpectedConditions.elementToBeClickable(lo.username()));
+			lo.username().sendKeys(username);
+			logger.info("Entered Username");
+		}
 		catch(StaleElementReferenceException e)
+		{
+			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("loginfmt"))));
+			driver.findElement(By.name("loginfmt")).sendKeys(username);
+			logger.info("Entered Username");
+		}
+		wait.until(ExpectedConditions.elementToBeClickable(lo.btnNext()));
+		action.moveToElement(lo.btnNext()).click().build().perform();
+		logger.info("Clicked on Next");
+			try 
 			{
-				wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("loginfmt"))));
-				driver.findElement(By.name("loginfmt")).sendKeys(username);
-				logger.info("Entered Username");
-			}
-				wait.until(ExpectedConditions.elementToBeClickable(lo.btnNext()));
-				action.moveToElement(lo.btnNext()).click().build().perform();
-				logger.info("Clicked on Next");
-		try {
 				wait.until(ExpectedConditions.elementToBeClickable(lo.password()));
 				lo.password().sendKeys(password);
 				logger.info("Entered Password");
@@ -78,9 +84,185 @@ public class MTMDispatchTest extends Base
 				action.moveToElement(lo.btnYes()).click().build().perform();
 				logger.info("Clicked on yes button");
 				logger.info("Application is successfully opened");	
+    
+	}
+	
+	
+
+	@Test
+	public void toVerifyTimeFrameFilter() throws InterruptedException
+	{
+		//--------TC 14 ---------//
+		// Creating objects for HomePage and DispatchPage
+		HomePageObjects homePageObjects = new HomePageObjects(driver);
+		TimeFilterObjects timeFilterObjects = new TimeFilterObjects(driver);
+
+		// Creating an explicit wait instance
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+		// Navigating to the Dispatch tab
+		homePageObjects.clickOnDispatchTab();
+		wait.until(ExpectedConditions.urlToBe(Locators.DISPATCH_URL));
+		
+		// Fetching initial record count before applying any filters
+		int initialRecordCount = timeFilterObjects.getRecordCount();
+		logger.info("Initial record count: " + initialRecordCount);
+		System.out.println("Initial record count: " + initialRecordCount);
+
+		// Applying Time Frame Filter (0-6 hours)
+		timeFilterObjects.clickOnTimeFrameFilter_0_6();
+		Thread.sleep(3000); // Wait for filter to be applied
+		boolean isFilterApplied_0_6 = timeFilterObjects.isTimeFrameFilterApplied_0_6();
+		Assert.assertTrue(isFilterApplied_0_6, "Time frame filter (0-6 hours) is not applied correctly");
+		logger.info("Successfully applied 0-6 hours filter");
+		System.out.println("Successfully applied 0-6 hours filter");
+
+		// Applying Time Frame Filter (6-12 hours)
+		Thread.sleep(3000); 
+		timeFilterObjects.clickOnTimeFrameFilter_6_12();
+		Thread.sleep(3000);
+		boolean isFilterApplied_6_12 = timeFilterObjects.isTimeFrameFilterApplied_6_12();
+		Assert.assertTrue(isFilterApplied_6_12, "Time frame filter (6-12 hours) is not applied correctly");
+		logger.info("Successfully applied 6-12 hours filter");
+		System.out.println("Successfully applied 6-12 hours filter");
+
+		// Applying Time Frame Filter (12-24 hours)
+		Thread.sleep(3000);
+		timeFilterObjects.clickOnTimeFrameFilter_12_24();
+		Thread.sleep(3000);
+		boolean isFilterApplied_12_24 = timeFilterObjects.isTimeFrameFilterApplied_12_24();
+		Assert.assertTrue(isFilterApplied_12_24, "Time frame filter (12-24 hours) is not applied correctly");
+		logger.info("Successfully applied 12-24 hours filter");
+		System.out.println("Successfully applied 12-24 hours filter");
+
+		// Applying Date Range Filter
+		timeFilterObjects.clickOnDateRangeFilter();
+		Thread.sleep(3000);
+		logger.info("Successfully applied Date Range filter");
+		System.out.println("Successfully applied Date Range filter");
+
+	}
+
+	
+	
+	@Test
+	public void ClearAllButtonFunctionality() throws InterruptedException
+	{
+		//---------------- TC 17 ----------------//
+
+		// Initialize Page Objects
+		HomePageObjects homePageObjects = new HomePageObjects(driver);
+		TripReasonsObject tripReasonsObject = new TripReasonsObject(driver);
+
+		//  Navigate to the Dispatch tab
+		homePageObjects.clickOnDispatchTab();
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL, "Dispatch tab URL is incorrect!");
+		logger.info("Successfully navigated to Dispatch tab");
+		System.out.println("Successfully navigated to Dispatch tab");
+
+		Thread.sleep(3000); 
+
+		// Get Initial Record Count
+	    int initialRecordCount = tripReasonsObject.getRecordCount();
+	    System.out.println("Initial record count: " + initialRecordCount);
+
+		// Select Behavioral Health checkbox and verify
+		tripReasonsObject.clickOnBehavioralHealth();
+		System.out.println("Selected Behavioral Health");
+		int countAfterBehavioralHealth = tripReasonsObject.getRecordCount();
+	    System.out.println("Record count after selecting Behavioral Health: " + countAfterBehavioralHealth);
+		Assert.assertTrue(tripReasonsObject.isCheckboxSelected(tripReasonsObject.getBehavioralHealth()), "Behavioral Health checkbox is NOT selected!");
+		logger.info("Behavioral Health checkbox selected successfully.");
+		System.out.println("Behavioral Health checkbox selected successfully.");
+
+		// Select Chemotherapy checkbox and verify
+		tripReasonsObject.clickOnChemotherapy();
+		System.out.println("Selected Chemotherapy");
+		int countAfterChemotherapy = tripReasonsObject.getRecordCount();
+	    System.out.println("Record count after selecting Chemotherapy: " + countAfterChemotherapy);
+		Assert.assertTrue(tripReasonsObject.isCheckboxSelected(tripReasonsObject.getChemotherapy()), "Chemotherapy checkbox is NOT selected!");
+		logger.info("Chemotherapy checkbox selected successfully.");
+		System.out.println("Chemotherapy checkbox selected successfully.");
+
+		// Select Dialysis checkbox and verify
+		tripReasonsObject.clickOnDialysis();
+		System.out.println("Selected Dialysis");
+		int countAfterDialysis = tripReasonsObject.getRecordCount();
+	    System.out.println("Record count after selecting Dialysis: " + countAfterDialysis);
+		Assert.assertTrue(tripReasonsObject.isCheckboxSelected(tripReasonsObject.getDialysis()), "Dialysis checkbox is NOT selected!");
+		logger.info("Dialysis checkbox selected successfully.");
+		System.out.println("Dialysis checkbox selected successfully.");
+
+		// Select Hospital Discharge checkbox and verify
+		tripReasonsObject.clickOnHospitalDischarge();
+		System.out.println("Selected Hospital Discharge");
+		int countAfterHospitalDischarge = tripReasonsObject.getRecordCount();
+	    System.out.println("Record count after selecting Hospital Discharge: " + countAfterHospitalDischarge);
+		Assert.assertTrue(tripReasonsObject.isCheckboxSelected(tripReasonsObject.getHospitalDischarge()), "Hospital Discharge checkbox is NOT selected!");
+		logger.info("Hospital Discharge checkbox selected successfully.");
+		System.out.println("Hospital Discharge checkbox selected successfully.");
+
+		// Select Methadone checkbox and verify
+		tripReasonsObject.clickOnMethadone();
+		System.out.println("Selected Methadone");
+		int countAfterMethadone = tripReasonsObject.getRecordCount();
+	    System.out.println("Record count after selecting Methadone: " + countAfterMethadone);
+		Assert.assertTrue(tripReasonsObject.isCheckboxSelected(tripReasonsObject.getMethadone()), "Methadone checkbox is NOT selected!");
+		logger.info("Methadone checkbox selected successfully.");
+		System.out.println("Methadone checkbox selected successfully.");
+
+		// Click on "Clear All" button to remove all filters
+		tripReasonsObject.clickOnclearAllButton();
+		System.out.println("Clicked  Clear All button");
+		
+		// Get Record Count After Clicking "Clear All"
+	    int finalRecordCount = tripReasonsObject.getRecordCount();
+	    System.out.println("Record count after clicking 'Clear All': " + finalRecordCount);
+	    
+		// Verify all selected filters are cleared
+		Assert.assertTrue(tripReasonsObject.getSelectedFilters().isEmpty(), "Filters are NOT cleared after clicking 'Clear All'!");
+		logger.info("All filters successfully cleared.");
+		System.out.println("All filters successfully cleared.");
+
+	}
+	
+	
+	public void verifyUserLogin_TC_01() throws IOException, InterruptedException
+	{
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(lo.username()));
+			lo.username().sendKeys(username);
+			logger.info("Entered Username");
+		}
+		catch(StaleElementReferenceException e){
+			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("loginfmt"))));
+			driver.findElement(By.name("loginfmt")).sendKeys(username);
+			logger.info("Entered Username");
+		}
+		wait.until(ExpectedConditions.elementToBeClickable(lo.btnNext()));
+		action.moveToElement(lo.btnNext()).click().build().perform();
+		logger.info("Clicked on Next");
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(lo.password()));
+			lo.password().sendKeys(password);
+			logger.info("Entered Password");
+		}
+		catch(StaleElementReferenceException e){
+			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("passwd"))));
+			driver.findElement(By.name("passwd")).sendKeys(password);
+			logger.info("Entered Password");
+		}
+		wait.until(ExpectedConditions.elementToBeClickable(lo.btnSignIn()));
+		action.moveToElement(lo.btnSignIn()).click().build().perform();
+		logger.info("Clicked on Sign in button");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(lo.btnYes()));
+		action.moveToElement(lo.btnYes()).click().build().perform();
+		logger.info("Clicked on yes button");
+		logger.info("Application is successfully opened");	
+		Thread.sleep(2000);
+		Assert.assertTrue(lo.getLogoImg().isDisplayed());
     }
-	
-	
 
 	
 	public void verifyRecordSelection() throws InterruptedException
@@ -270,7 +452,7 @@ public class MTMDispatchTest extends Base
 		Assert.assertTrue(dp.titleDispatch().isDisplayed());
 	}
 
-	
+		
 	public void verifyTabsOnHomePage()
 	{	
 		HomePageObjects homePageObjects  = new HomePageObjects(driver);
@@ -430,5 +612,134 @@ public class MTMDispatchTest extends Base
 		
 		
 	}
+
+	@Test
+	public void verifyStatusFilter() throws InterruptedException 
+	{	
+	//------------TC_15------------// 
+	HomePageObjects homePageObjects = new HomePageObjects(driver);
+	StatusFilterObjects statusFilterObjects = new StatusFilterObjects(driver);
+
+    //  Click on Dispatch Tab
+	homePageObjects.clickOnDispatchTab();
+	Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL , "Dispatch tab URL is incorrect");
+	logger.info("Successfully navigated to Dispatch tab");
+	System.out.println("Successfully navigated to Dispatch tab");
+	
+	Thread.sleep(2000); 
+	
+	//Clicking on Parked/Pending status and validating 
+	statusFilterObjects.selectParkedOrPending();
+	Assert.assertTrue(statusFilterObjects.isPendingStatusFilterApplied());
+	logger.info("Successfully Parked/Pending Filter Applied");
+	System.out.println("Successfully Parked/Pending Filter Applied");
+	
+	Thread.sleep(2000);
+	
+	//Clicking on Reassigned status and validating 
+	statusFilterObjects.selectReassigned();
+	Thread.sleep(2000);
+	Assert.assertTrue(statusFilterObjects.isReassignedStatusFilterApplied());
+	logger.info("Successfully Reassigned Filter Applied");
+	System.out.println("Successfully Reassigned Filter Applied");
+	
+	Thread.sleep(2000);
+	
+	//Clicking on Trip Bidding status and validating 
+	statusFilterObjects.selectTripBidding();
+	Thread.sleep(2000);
+	Assert.assertTrue(statusFilterObjects.isTripBiddingStatusFilterApplied());
+	logger.info("Successfully Trip Bidding Filter Applied");
+	System.out.println("Successfully Trip Bidding Filter Applied");
+	
+	Thread.sleep(2000);
+	
+	//Clicking on All status and validating 
+	statusFilterObjects.selectAll();
+	Thread.sleep(2000);
+	Assert.assertTrue(statusFilterObjects.isALLStatusFilterApplied());
+	logger.info("Successfully ALL Filter Applied");
+	System.out.println("Successfully Parked/Pending Filter Applied");
+	
+	
+	}
+	
+	@Test
+	public void verifyTripReasonsFilter()
+	{	
+	//------------TC_16------------// 
+	HomePageObjects homePageObjects = new HomePageObjects(driver);
+	TripReasonObjects tripReasonObjects =  new TripReasonObjects (driver);
+	
+    //  Click on Dispatch Tab
+	homePageObjects.clickOnDispatchTab();
+	Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL , "Dispatch tab URL is incorrect");
+	logger.info("Successfully navigated to Dispatch tab");
+	System.out.println("Successfully navigated to Dispatch tab");
+	
+	
+	tripReasonObjects.selectBehavioralHealth();
+	Assert.assertTrue(tripReasonObjects.isTripReasonFilterApplied("Behavioral Health"), "Trip Reason filter is not applied correctly.");
+	logger.info("Successfully Behavioral Health Filter Applied");
+	System.out.println("Successfully Behavioral Health Filter Applied");
+	
+	tripReasonObjects.selectChemotherapy();
+	Assert.assertTrue(tripReasonObjects.isTripReasonFilterApplied("Chemotherapy"), "Chemotherapy filter is not applied correctly.");
+	logger.info("Successfully Chemotherapy Filter Applied");
+	System.out.println("Successfully Chemotherapy Filter Applied");
+	
+	tripReasonObjects.selectDialysis();
+	Assert.assertTrue(tripReasonObjects.isTripReasonFilterApplied("Dialysis"), "Chemotherapy filter is not applied correctly.");
+	logger.info("Successfully Dialysis Filter Applied");
+	System.out.println("Successfully Dialysis Filter Applied");
+	
+	tripReasonObjects.selectHospitalDischarge();
+	Assert.assertTrue(tripReasonObjects.isTripReasonFilterApplied("Hospital - Discharge"), "Chemotherapy filter is not applied correctly.");
+	logger.info("Successfully Hospital Discharge Filter Applied");
+	System.out.println("Successfully Hospital Discharge Filter Applied");
+	
+	tripReasonObjects.selectMethadone();
+	Assert.assertTrue(tripReasonObjects.isTripReasonFilterApplied("Methadone"), "Chemotherapy filter is not applied correctly.");
+	logger.info("Successfully Methadone Filter Applied");
+	System.out.println("Successfully Methadone Filter Applied");
+	
+	}
+	@Test
+	public void searchInAllColumnsFilter () throws InterruptedException
+	{
+		HomePageObjects homePageObjects = new HomePageObjects(driver);
+		ColumnFilterObjects columnFilterObjects = new ColumnFilterObjects(driver);
+
+		// Click on Dispatch Tab
+		homePageObjects.clickOnDispatchTab();
+		Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL , "Dispatch tab URL is incorrect!");
+		logger.info("Successfully navigated to Dispatch tab");
+	    System.out.println("Successfully navigated to Dispatch tab");
+	    
+	    Thread.sleep(2000);
+	    
+	    columnFilterObjects.insertingPlanName();
+	    Thread.sleep(2000);
+	    Assert.assertTrue(columnFilterObjects.isFilterApplied("Molina IA Medicaid Waiver"), "Plan Name filter failed!");
+		System.out.println("Plan Name filter Applied Succesfully");
+
+	    columnFilterObjects.insertingMember();
+	    Thread.sleep(2000);
+	    Assert.assertTrue(columnFilterObjects.isFilterApplied("JONTRAY BLAIR"), "Member filter failed!");
+		System.out.println("Member filter Applied Succesfully");
+
+	    columnFilterObjects.insertingMemberID();
+	    Thread.sleep(2000);
+	    Assert.assertTrue(columnFilterObjects.isFilterApplied("2308284D"), "Member ID filter failed!");
+		System.out.println("MemberID filter Applied Succesfully");
+	    
+	    columnFilterObjects.insertingTrip();
+	    Thread.sleep(2000);
+	    Assert.assertTrue(columnFilterObjects.isFilterApplied("56747261"), "Trip filter failed!");
+		System.out.println("Trip filter Applied Succesfully");
+
+	}
+	
+	
 
 }
