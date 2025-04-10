@@ -7,9 +7,8 @@
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="verifyLYFTSearch_TC_05"/>
+          <include name="toVerifyTimeFrameFilter"/>
           <include name="setup"/>
-          <include name="google"/>
         </methods>
       </class> <!-- MTMAutomation.DispatchTest.MTMDispatchTest -->
     </classes>

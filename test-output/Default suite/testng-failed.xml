@@ -5,16 +5,10 @@
     <classes>
       <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
         <methods>
-<<<<<<< HEAD
-          <include name="ClearAllButtonFunctionality"/>
           <include name="tearDown"/>
           <include name="setup"/>
-=======
-          <include name="tearDown"/>
->>>>>>> e09ac3b17d466e606dc11e75c9b63c3fa011df50
+          <include name="toVerifyTimeFrameFilter"/>
           <include name="setup"/>
-          <include name="setup"/>
-          <include name="verifyRemarkCommentAdd_TC_18"/>
         </methods>
       </class> <!-- MTMAutomation.DispatchTest.MTMDispatchTest -->
     </classes>
