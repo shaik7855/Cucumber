@@ -17,6 +17,7 @@ import MTMAutomation.DispatchTest.Locators.Locators;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
 import MTMAutomation.DispatchTest.PageObjects.LoginObjects;
 import MTMAutomation.DispatchTest.PageObjects.StatusFilterObjects;
+import MTMAutomation.DispatchTest.PageObjects.TimeFilterObjects;
 import MTMAutomation.DispatchTest.PageObjects.TripReasonObjects;
 import MTMAutomation.DispatchTest.PageObjects.TripReasonsObject;
 import MTMAutomation.DispatchTest.PageObjects.ColumnFilterObjects;
@@ -85,6 +86,7 @@ public class MTMDispatchTest extends Base
 		logger.info("Application is successfully opened");	
 	
     }
+	
 	@Test
 	public void toVerifyTimeFrameFilter() throws InterruptedException
 	{
@@ -99,7 +101,7 @@ public class MTMDispatchTest extends Base
 		// Navigating to the Dispatch tab
 		homePageObjects.clickOnDispatchTab();
 		wait.until(ExpectedConditions.urlToBe(Locators.DISPATCH_URL));
-		
+
 		// Fetching initial record count before applying any filters
 		int initialRecordCount = timeFilterObjects.getRecordCount();
 		logger.info("Initial record count: " + initialRecordCount);
@@ -133,7 +135,11 @@ public class MTMDispatchTest extends Base
 
 		// Applying Date Range Filter
 		timeFilterObjects.clickOnDateRangeFilter();
+		Thread.sleep(2000);
+		timeFilterObjects.ClickOnStartDate();
+		timeFilterObjects.ClickOn1stApril();
 		Thread.sleep(3000);
+		Assert.assertTrue(timeFilterObjects.validateAppointmentDateIsInRange());
 		logger.info("Successfully applied Date Range filter");
 		System.out.println("Successfully applied Date Range filter");
 
