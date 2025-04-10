@@ -270,4 +270,22 @@ public class DispatchObjects extends DispatchLocators {
     	startDate.click();
     }
     
+	//================================================================================================================//
+    
+    @FindBy(xpath = "//button[.='View']" )
+    WebElement viewButton;
+    public void clickOnViewButton() 
+    {
+    	viewButton.click();
+    }
+    
+//================================================================================================================//
+    
+    @FindBy(xpath = "(//img[@class='mapIcon' and @alt='Show Map'])[1]" )
+    WebElement mapbutton;
+    public void clickOnMapButton() 
+    {
+    	mapbutton.click();
+    }
+    
 }
