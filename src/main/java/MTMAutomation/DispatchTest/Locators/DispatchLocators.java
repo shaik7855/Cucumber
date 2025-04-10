@@ -21,6 +21,13 @@ public class DispatchLocators extends Base
 	public final String dispatch_title = "//span[text()='Dispatch']";
 	public final String remarks_username = "(//div[@class='remark'])[1]/div[1]";
 	public final String remarks_text = "(//div[@class='remark'])[1]/div[2]";
+	public final String firstname_text ="//label[text()='First Name']/following-sibling::input";
+	public final String lastname_text ="//label[text()='Last Name']/following-sibling::input";
+	public final String dob_text = "//label[text()='Date Of Birth']/following-sibling::input";
+	public final String phone_text ="//label[text()='Phone']/following-sibling::input";
+	public final String start_date = "//label[text()='Start Date']/following-sibling::input";
+	public final String end_date = "//label[text()='End Date']/following-sibling::input";
+	public final String start_year ="(//div[@class='pika-label'])[2]";
 	
 }
 

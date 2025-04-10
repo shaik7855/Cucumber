@@ -101,30 +101,4 @@ public class HomePageObjects {
             return false;
         }
     }
-    
-    //-------------------------------LYFT Tab visibility---------------------------------//
-
-    
-    @FindBy(xpath = HomePageLocators.LYFT_Tab)
-    @CacheLookup
-	 WebElement lyftTAB;
-    
-    public  boolean lyftTabTabVisibility()
-    {
-    	return lyftTAB.isDisplayed();
-    }
-    
-    
- //-------------------------------OLOS Tab visibility---------------------------------//
-
-    
-    /*@FindBy(xpath = HomePageLocators.OLOS_Tab)
-    @CacheLookup
-	 WebElement olosTAB;
-    
-    public  boolean OLOSTabTabVisibility()
-    {
-    	return olosTAB.isDisplayed();
-    }*/
-    
 }
