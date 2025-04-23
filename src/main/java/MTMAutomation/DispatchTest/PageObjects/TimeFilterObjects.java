@@ -96,6 +96,8 @@ public class TimeFilterObjects
     //To check the filter is applied 
     public boolean  isTimeFrameFilterApplied_0_6 ()
     {
+    	int validCount = 0;
+
     	// Check if table is empty
         if (rowsCount.isEmpty())
         { 
@@ -104,24 +106,29 @@ public class TimeFilterObjects
         }
         else 
         {
-    	//for loop for the iterate through each row 
-    	for (WebElement row : rowsCount)
-    	{
-    		// getting the text content 
-    		String text = row.getText().trim();
-    			//checking that text contains the "hours"
-    			if (text.toLowerCase().contains("hours")) 
-    				{
-    				//spliting the text and extracting the numeric value 
-    					int hours = Integer.parseInt(text.split(" ")[0]);
-    						//validating the extratced hours falling in range of (0-6)
-    						if (hours < 0 && hours > 6 )
-    						{
-    							return false; // Return false if any row is out of range
-    						}
-    				}
-    	}
+	    	//for loop for the iterate through each row 
+	    	for (WebElement row : rowsCount)
+	    	{
+	    		// getting the text content 
+	    		String text = row.getText().trim();
+	    			//checking that text contains the "hours"
+	    			if (text.toLowerCase().contains("hours")) 
+	    				{
+	    				//spliting the text and extracting the numeric value 
+	    					int hours = Integer.parseInt(text.split(" ")[0]);
+	    						//validating the extratced hours falling in range of (0-6)
+	    						if (hours < 0 && hours > 6 )
+	    						{
+	    							return false; // Return false if any row is out of range
+	    						}
+	    						else 
+	    						{
+	    							 validCount++;
+	    						}
+	    				}
+	    	}
         }
+        System.out.println("0-6 Filter Record Count: " + validCount);
 		return true; // Return true if all rows meet the condition
     }
     
@@ -134,6 +141,8 @@ public class TimeFilterObjects
     //To check the filter is applied 
     public boolean  isTimeFrameFilterApplied_6_12 ()
     {
+    	int validCount = 0;
+
     	// Check if table is empty
         if (rowsCount1.isEmpty())
         { 
@@ -157,9 +166,14 @@ public class TimeFilterObjects
     						{
     							return false; // Return false if any row is out of range
     						}
+    						else 
+    						{
+    							validCount++;
+    						}
     				}
     		}
         }
+        System.out.println("6-12 Filter Record Count: " + validCount);
 		return true; // Return true if all rows meet the condition
     }
     
@@ -171,6 +185,8 @@ public class TimeFilterObjects
     //To check the filter is applied 
     public boolean  isTimeFrameFilterApplied_12_24 ()
     {
+    	int validCount = 0;
+
     	// Check if table is empty
         if (rowsCount2.isEmpty())
         { 
@@ -194,9 +210,14 @@ public class TimeFilterObjects
     						{
     							return false; // Return false if any row is out of range
     						}
+    						else 
+    						{
+    							validCount++;
+    						}
     				}
     	}
         }
+        System.out.println("12-24 Filter Record Count: " + validCount);
 		return true; // Return true if all rows meet the condition
     }
   
