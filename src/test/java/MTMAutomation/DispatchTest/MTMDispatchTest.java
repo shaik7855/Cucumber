@@ -721,6 +721,58 @@ public class MTMDispatchTest extends Base
 
 	}
 	
-	
+	@Test
+	public void verifyTimeFrameFilter() throws InterruptedException
+	{
+	    HomePageObjects homePageObjects = new HomePageObjects(driver);
+	    TimeFilterObjects timeFilterObjects = new TimeFilterObjects(driver);
+
+	    // Navigate to Dispatch tab
+	    homePageObjects.clickOnDispatchTab();
+	    Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL, "Dispatch tab URL is incorrect!");
+	    logger.info("Successfully navigated to Dispatch tab");
+	    System.out.println("Successfully navigated to Dispatch tab");
+
+	    Thread.sleep(2000);
+
+	    // Get initial record count
+	    int initialCount = timeFilterObjects.getRecordCount();
+	    System.out.println("Initial Record Count: " + initialCount);
+	    logger.info("Initial Record Count: " + initialCount);
+
+	    Thread.sleep(2000);
+	    
+	    // Apply 0-6 filter and assert
+	    timeFilterObjects.clickOnTimeFrameFilter_0_6();
+	    Thread.sleep(7000);
+	    Assert.assertTrue(timeFilterObjects.isTimeFrameFilterApplied_0_6(), "0-6 hours filter validation failed");
+
+	    // Apply 6-12 filter and assert
+	    timeFilterObjects.clickOnTimeFrameFilter_6_12();
+	    Thread.sleep(7000);
+	    Assert.assertTrue(timeFilterObjects.isTimeFrameFilterApplied_6_12(), "6-12 hours filter validation failed");
+
+	    // Apply 12-24 filter and assert
+	    timeFilterObjects.clickOnTimeFrameFilter_12_24();
+	    Thread.sleep(7000);
+	    Assert.assertTrue(timeFilterObjects.isTimeFrameFilterApplied_12_24(), "12-24 hours filter validation failed");
+
+	    // Apply Date Range filter and assert
+	    timeFilterObjects.clickOnDateRangeFilter();
+	    Thread.sleep(1000);
+	    timeFilterObjects.ClickOnStartDate();
+	    Thread.sleep(500);
+	    timeFilterObjects.ClickOn1stApril();
+	    Thread.sleep(2000); 
+
+	    int countAfterDateRange = timeFilterObjects.getRecordCount();
+	    System.out.println("Date Range Filter Record Count: " + countAfterDateRange);
+	    logger.info("Date Range Filter Record Count: " + countAfterDateRange);
+
+	    Assert.assertTrue(timeFilterObjects.validateAppointmentDateIsInRange(),"Appointment date is NOT within the selected date range");
+	    System.out.println("All time filter validations passed successfully.");
+	    logger.info("All time filter validations passed successfully.");
+	}
+
 
 }

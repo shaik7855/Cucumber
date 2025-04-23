@@ -5,9 +5,9 @@
     <classes>
       <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
         <methods>
-          <include name="tearDown"/>
           <include name="setup"/>
-          <include name="toVerifyTimeFrameFilter"/>
+          <include name="tearDown"/>
+          <include name="verifyTimeFrameFilter"/>
           <include name="setup"/>
         </methods>
       </class> <!-- MTMAutomation.DispatchTest.MTMDispatchTest -->
