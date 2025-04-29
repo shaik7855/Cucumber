@@ -3,8 +3,11 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import static org.testng.Assert.assertTrue;
+
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -88,7 +91,7 @@ public class MTMDispatchTest extends Base
 	}
 	
 	
-	@Test
+	@Test(groups = { "regression" })
 	public void ClearAllButtonFunctionality() throws InterruptedException
 	{
 		//---------------- TC 17 ----------------//
@@ -169,7 +172,7 @@ public class MTMDispatchTest extends Base
 
 	}
 	
-	
+	@Test(groups = { "smoke" }, enabled = false)
 	public void verifyUserLogin_TC_01() throws IOException, InterruptedException
 	{
 		try {
@@ -207,7 +210,7 @@ public class MTMDispatchTest extends Base
 		Assert.assertTrue(lo.getLogoImg().isDisplayed());
     }
 
-	
+	@Test(groups = { "smoke" , "regression" })
 	public void verifyRecordSelection() throws InterruptedException
 	{	
 		//------------TC_04------------// 
@@ -236,7 +239,7 @@ public class MTMDispatchTest extends Base
 	}
 
 
-	
+	@Test(groups = { "regression" })
 	public void verifyAllColumnsVisible() throws InterruptedException
 	{
 		//---TC 10  view all the columns in Dispatch tab ---//
@@ -262,9 +265,11 @@ public class MTMDispatchTest extends Base
 	}
 	
 
-	
+	@Test(groups = { "smoke" , "regression" })
 	public void navigationBetweenTabs() throws InterruptedException
 	{
+		//---TC 03  ---//
+		
 		HomePageObjects homePageObjects = new HomePageObjects(driver);
 		
 		homePageObjects.clickOnDispatchTab();
@@ -282,7 +287,7 @@ public class MTMDispatchTest extends Base
 	}
 	
 
-	@Test(enabled = false)
+	@Test(groups = { "regression" }, enabled = false)
 	public void verifySignOut_TC_09() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.btnSignOut()));
@@ -296,6 +301,7 @@ public class MTMDispatchTest extends Base
 		
 	}
 	
+	@Test(groups = { "regression" })
 	public void verifyLYFTSearchNoData_TC_12() throws IOException, InterruptedException
 	{
 		
@@ -314,7 +320,7 @@ public class MTMDispatchTest extends Base
 		
 	}
 	
-	
+	@Test(groups = { "regression" })
 	public void verifyRemarkCommentAdd_TC_18() throws IOException, InterruptedException
 	{
 		// Declare and initialize the remark value to be added
@@ -353,7 +359,7 @@ public class MTMDispatchTest extends Base
 	
 	}
 	
-	
+	@Test(groups = { "regression" })
 	public void verifyRemarkAddDialoguebox_TC_19() throws IOException, InterruptedException
 	{		
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabDispatch()));
@@ -372,7 +378,7 @@ public class MTMDispatchTest extends Base
 		Assert.assertFalse(dp.btnRemarkAdd().isEnabled());	
 	}
 	
-	
+	@Test(groups = { "regression" })
 	public void verifyRemarkCloseIcon_TC_20() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabDispatch()));
@@ -394,9 +400,12 @@ public class MTMDispatchTest extends Base
 		Assert.assertTrue(dp.titleDispatch().isDisplayed());
 	}
 
-		
+	
+	@Test(groups = { "smoke" , "regression" })
 	public void verifyTabsOnHomePage()
 	{	
+		//--- TC 02 ---//
+		
 		HomePageObjects homePageObjects  = new HomePageObjects(driver);
 	
 		Assert.assertTrue(homePageObjects.dispatchTabVisibility() , "Dispatch Tab is NOT visible"  );
@@ -407,7 +416,7 @@ public class MTMDispatchTest extends Base
 		System.out.println("OLOS tab is visible");
 	}
 
-	
+	@Test(groups = { "regression" })
 	public void verifyOLOSClear_TC_07() throws IOException, InterruptedException
 	{	
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabOlos()));
@@ -443,7 +452,8 @@ public class MTMDispatchTest extends Base
 		
 	}
 
-	@Test(enabled = false)
+	
+	@Test(groups = { "regression" }, enabled = false)
 	public void verifyOLOSSearch_TC_08() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabOlos()));
@@ -472,7 +482,7 @@ public class MTMDispatchTest extends Base
 		logger.info("Clicked on search button");
 	}
 	
-	
+	@Test(groups = { "regression" })
 	public void verifyLYFTClear_TC_13() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabLyft()));
@@ -520,7 +530,7 @@ public class MTMDispatchTest extends Base
 		Assert.assertTrue(dp.setDOB().getText().isEmpty());			
 	}
 
-	
+	@Test(groups = { "smoke" , "regression"  })
 	public void verifyLYFTSearch_TC_05() throws IOException, InterruptedException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabLyft()));
@@ -555,9 +565,11 @@ public class MTMDispatchTest extends Base
 		
 	}
 	
-	@Test(enabled = false)
+	@Test(groups = { "regression" }, enabled = false)
 	public void verfiyLocationOfTheTips() throws IOException, InterruptedException
 	{
+		//------TC 06------//
+		
 		wait.until(ExpectedConditions.elementToBeClickable(dp.tabLyft()));
 		action.moveToElement(dp.tabLyft()).click().build().perform();
 		Assert.assertEquals(driver.getCurrentUrl(), Locators.LYFT_URL , "LYFT tab URL is incorrect!");
@@ -594,7 +606,7 @@ public class MTMDispatchTest extends Base
 		dp.clickOnMapButton();
 	}
 
-	@Test
+	@Test(groups = { "smoke" , "regression" })
 	public void verifyStatusFilter() throws InterruptedException 
 	{	
 	//------------TC_15------------// 
@@ -645,7 +657,7 @@ public class MTMDispatchTest extends Base
 	
 	}
 	
-	@Test
+	@Test(groups = { "smoke" , "regression"})
 	public void verifyTripReasonsFilter()
 	{	
 	//------------TC_16------------// 
@@ -685,7 +697,8 @@ public class MTMDispatchTest extends Base
 	System.out.println("Successfully Methadone Filter Applied");
 	
 	}
-	@Test
+	
+	@Test(groups = { "regression" })
 	public void searchInAllColumnsFilter () throws InterruptedException
 	{
 		HomePageObjects homePageObjects = new HomePageObjects(driver);
@@ -721,7 +734,8 @@ public class MTMDispatchTest extends Base
 
 	}
 	
-	@Test
+	
+	@Test(groups = { "smoke" , "regression" })
 	public void verifyTimeFrameFilter() throws InterruptedException
 	{
 	    HomePageObjects homePageObjects = new HomePageObjects(driver);
@@ -773,6 +787,12 @@ public class MTMDispatchTest extends Base
 	    System.out.println("All time filter validations passed successfully.");
 	    logger.info("All time filter validations passed successfully.");
 	}
-
+	
+	
+	@AfterMethod
+	public void Quit()
+	{
+		driver.close();
+	}
 
 }
