@@ -48,7 +48,7 @@ public class LoginObjects extends LoginLocators {
 	    return btnsignin;
 	}
 	
-	@FindBy(id=yesbutton_id_value)
+	@FindBy(xpath=yesbutton_id_value)
 	@CacheLookup
 	WebElement btnyes;
 	public WebElement btnYes() {
