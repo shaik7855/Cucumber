@@ -8,7 +8,7 @@ public class Locators
 {
 	public static final String DISPATCH_URL = "https://dispatch-test.mtm-inc.net/";
 	
-	public static final String DISPATCH_TAB = "//a[@id='ember463']"; //xpath
+	public static final String DISPATCH_TAB = "//a[text()='Dispatch']"; //xpath
 	
 	
     public static final String DISPATCH_TABLE_HEADERS_XPATH = "//th[@class='sorting ']";
