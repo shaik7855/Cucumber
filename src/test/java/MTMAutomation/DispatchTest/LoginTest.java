@@ -66,6 +66,7 @@ public class LoginTest extends Base{
 		logger.info("Clicked on Sign in button");
 		
 		wait.until(ExpectedConditions.elementToBeClickable(lo.btnYes()));
+		Thread.sleep(5000);
 		action.moveToElement(lo.btnYes()).click().build().perform();
 		logger.info("Clicked on yes button");
 		logger.info("Application is successfully opened");
