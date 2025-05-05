@@ -34,8 +34,10 @@ public class LoginTest extends Base{
         wait = new WebDriverWait(driver, Duration.ofSeconds(60));  
         action = new Actions(driver);
         driver.navigate().to(baseURL);
-        verifyUserLogin_TC_01();
+        //verifyUserLogin_TC_01();
     }
+	
+	@Test
 	public void verifyUserLogin_TC_01() throws IOException, InterruptedException
 	{
 		try {

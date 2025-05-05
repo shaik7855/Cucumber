@@ -29,6 +29,8 @@ import MTMAutomation.DispatchTest.PageObjects.DispatchObjects;
 import MTMAutomation.DispatchTest.PageObjects.DispatchPageObjects;
 import MTMAutomation.DispatchTest.PageObjects.HomePageObjects;
 import MTMAutomation.DispatchTest.Utilities.Base;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 /**
  * Unit test for simple App.
  */
@@ -39,6 +41,7 @@ public class MTMDispatchTest extends Base
 	DispatchObjects dp;
 	WebDriverWait wait;
 	Actions action;
+	private static final Logger logger = LogManager.getLogger(MTMDispatchTest.class);;
 	
 	@BeforeMethod(alwaysRun=true)
     public void setup() throws InterruptedException, IOException
@@ -50,42 +53,53 @@ public class MTMDispatchTest extends Base
         driver.navigate().to(baseURL);
         verifyUserLogin();		
     }
-
-	public void verifyUserLogin() throws IOException, InterruptedException
+public void verifyUserLogin() throws IOException, InterruptedException
 	{
 		try 
 		{
 			wait.until(ExpectedConditions.elementToBeClickable(lo.username()));
+			Thread.sleep(3000);
 			lo.username().sendKeys(username);
+			Thread.sleep(3000);
 			logger.info("Entered Username");
 		}
 		catch(StaleElementReferenceException e)
 		{
 			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("loginfmt"))));
 			driver.findElement(By.name("loginfmt")).sendKeys(username);
+			Thread.sleep(3000);
 			logger.info("Entered Username");
 		}
 		wait.until(ExpectedConditions.elementToBeClickable(lo.btnNext()));
+		Thread.sleep(3000);
 		action.moveToElement(lo.btnNext()).click().build().perform();
+		Thread.sleep(3000);
 		logger.info("Clicked on Next");
 			try 
 			{
 				wait.until(ExpectedConditions.elementToBeClickable(lo.password()));
+				Thread.sleep(3000);
 				lo.password().sendKeys(password);
+				Thread.sleep(3000);
 				logger.info("Entered Password");
 			}
 		catch(StaleElementReferenceException e)
 			{
 				wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("passwd"))));
+				Thread.sleep(3000);
 				driver.findElement(By.name("passwd")).sendKeys(password);
 				logger.info("Entered Password");
 			}
 				wait.until(ExpectedConditions.elementToBeClickable(lo.btnSignIn()));
+				Thread.sleep(3000);
 				action.moveToElement(lo.btnSignIn()).click().build().perform();
+				Thread.sleep(3000);
 				logger.info("Clicked on Sign in button");
 				
 				wait.until(ExpectedConditions.elementToBeClickable(lo.btnYes()));
+				Thread.sleep(3000);
 				action.moveToElement(lo.btnYes()).click().build().perform();
+				Thread.sleep(3000);
 				logger.info("Clicked on yes button");
 				logger.info("Application is successfully opened");	
     
@@ -787,13 +801,6 @@ public class MTMDispatchTest extends Base
 	    Assert.assertTrue(timeFilterObjects.validateAppointmentDateIsInRange(),"Appointment date is NOT within the selected date range");
 	    System.out.println("All time filter validations passed successfully.");
 	    logger.info("All time filter validations passed successfully.");
-	}
-	
-	
-	@AfterTest
-	public void Quit()
-	{
-		driver.close();
 	}
 
 }
