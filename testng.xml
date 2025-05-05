@@ -5,7 +5,7 @@
     <classes>
       <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
       <methods>
-      <include name ="ClearAllButtonFunctionality"></include>
+      <include name ="verifyAllColumnsVisible"></include>
       </methods>
       </class>
     </classes>
