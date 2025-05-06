@@ -2,15 +2,15 @@
 <testng-results ignored="19" total="20" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-05T15:03:40 IST" name="Suite" finished-at="2025-05-05T15:08:02 IST" duration-ms="262065">
+  <suite started-at="2025-05-05T15:59:31 IST" name="Suite" finished-at="2025-05-05T16:01:01 IST" duration-ms="89822">
     <groups>
       <group name="regression">
-        <method signature="MTMDispatchTest.ClearAllButtonFunctionality()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7642df8f]" name="ClearAllButtonFunctionality" class="MTMAutomation.DispatchTest.MTMDispatchTest"/>
+        <method signature="MTMDispatchTest.verifyAllColumnsVisible()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7642df8f]" name="verifyAllColumnsVisible" class="MTMAutomation.DispatchTest.MTMDispatchTest"/>
       </group> <!-- regression -->
     </groups>
-    <test started-at="2025-05-05T15:03:40 IST" name="SmokeTests" finished-at="2025-05-05T15:08:02 IST" duration-ms="262065">
+    <test started-at="2025-05-05T15:59:31 IST" name="SmokeTests" finished-at="2025-05-05T16:01:01 IST" duration-ms="89822">
       <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7642df8f]" started-at="2025-05-05T15:03:40 IST" name="setup" finished-at="2025-05-05T15:03:42 IST" duration-ms="1998" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7642df8f]" started-at="2025-05-05T15:59:31 IST" name="setup" finished-at="2025-05-05T15:59:33 IST" duration-ms="2316" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,15 +21,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7642df8f]" started-at="2025-05-05T15:03:42 IST" name="setup" finished-at="2025-05-05T15:04:58 IST" duration-ms="75516" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7642df8f]" started-at="2025-05-05T15:59:34 IST" name="setup" finished-at="2025-05-05T16:00:58 IST" duration-ms="84725" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="ClearAllButtonFunctionality()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7642df8f]" started-at="2025-05-05T15:04:58 IST" name="ClearAllButtonFunctionality" finished-at="2025-05-05T15:08:02 IST" duration-ms="184005" status="PASS">
+        <test-method signature="verifyAllColumnsVisible()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7642df8f]" started-at="2025-05-05T16:00:58 IST" name="verifyAllColumnsVisible" finished-at="2025-05-05T16:01:01 IST" duration-ms="2363" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ClearAllButtonFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7642df8f]" started-at="2025-05-05T15:08:02 IST" name="tearDown" finished-at="2025-05-05T15:08:02 IST" duration-ms="494" status="PASS">
+        </test-method> <!-- verifyAllColumnsVisible -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:MTMAutomation.DispatchTest.MTMDispatchTest@7642df8f]" started-at="2025-05-05T16:01:01 IST" name="tearDown" finished-at="2025-05-05T16:01:01 IST" duration-ms="364" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

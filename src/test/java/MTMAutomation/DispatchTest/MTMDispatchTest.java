@@ -41,6 +41,8 @@ public class MTMDispatchTest extends Base
 	DispatchObjects dp;
 	WebDriverWait wait;
 	Actions action;
+	HomePageObjects homePageObjects;
+	 DispatchPageObjects dispatchPageObjects;
 	private static final Logger logger = LogManager.getLogger(MTMDispatchTest.class);;
 	
 	@BeforeMethod(alwaysRun=true)
@@ -48,6 +50,8 @@ public class MTMDispatchTest extends Base
     {
     	lo = new LoginObjects(driver);
     	dp = new DispatchObjects(driver);
+    	homePageObjects=new HomePageObjects(driver);
+    	dispatchPageObjects = new DispatchPageObjects(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(60));  
         action = new Actions(driver);
         driver.navigate().to(baseURL);
@@ -258,10 +262,6 @@ public void verifyUserLogin() throws IOException, InterruptedException
 	public void verifyAllColumnsVisible() throws InterruptedException
 	{
 		//---TC 10  view all the columns in Dispatch tab ---//
-		HomePageObjects homePageObjects = new HomePageObjects(driver);
-	    DispatchPageObjects dispatchPageObjects = new DispatchPageObjects(driver);
-
-	    
 		// Click on Dispatch Tab
 		homePageObjects.clickOnDispatchTab();
 		Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL , "Dispatch tab URL is incorrect!");
@@ -284,8 +284,6 @@ public void verifyUserLogin() throws IOException, InterruptedException
 	public void navigationBetweenTabs() throws InterruptedException
 	{
 		//---TC 03  ---//
-		
-		HomePageObjects homePageObjects = new HomePageObjects(driver);
 		
 		homePageObjects.clickOnDispatchTab();
 		Assert.assertEquals(driver.getCurrentUrl(), Locators.DISPATCH_URL , "Dispatch tab URL is incorrect!");

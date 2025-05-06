@@ -4,9 +4,9 @@
   <test name="SmokeTests">
     <classes>
       <class name="MTMAutomation.DispatchTest.MTMDispatchTest">
-      <methods>
-      <include name ="verifyAllColumnsVisible"></include>
-      </methods>
+        <methods>
+          <include name="verifyAllColumnsVisible"/>
+        </methods>
       </class>
     </classes>
   </test> <!-- Test -->
