@@ -45,3 +45,33 @@
 2025-05-06T16:25:56,631 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Hospital Discharge checkbox selected successfully.
 2025-05-06T16:26:26,795 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Methadone checkbox selected successfully.
 2025-05-06T16:26:56,977 [main] MTMAutomation.DispatchTest.MTMDispatchTest - All filters successfully cleared.
+2025-05-06T16:34:43,246 [main] MTMAutomation.DispatchTest.Utilities.Base - Test Class Execution Start time UTC: 2025-05-06T11:04:43.236420400Z
+2025-05-06T16:36:19,142 [main] MTMAutomation.DispatchTest.Utilities.Base - Test Class Execution Start time UTC: 2025-05-06T11:06:19.133798800Z
+2025-05-06T16:38:38,938 [main] MTMAutomation.DispatchTest.Utilities.Base - Entered Username
+2025-05-06T16:38:39,123 [main] MTMAutomation.DispatchTest.Utilities.Base - Clicked on Next
+2025-05-06T16:38:40,790 [main] MTMAutomation.DispatchTest.Utilities.Base - Entered Password
+2025-05-06T16:38:40,958 [main] MTMAutomation.DispatchTest.Utilities.Base - Clicked on Sign in button
+2025-05-06T16:38:46,147 [main] MTMAutomation.DispatchTest.Utilities.Base - Clicked on yes button
+2025-05-06T16:38:46,148 [main] MTMAutomation.DispatchTest.Utilities.Base - Application is successfully opened
+2025-05-06T16:40:19,110 [main] MTMAutomation.DispatchTest.Utilities.Base - Test Class Execution Start time UTC: 2025-05-06T11:10:19.109943300Z
+2025-05-06T16:41:28,693 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Entered Username
+2025-05-06T16:41:34,884 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Clicked on Next
+2025-05-06T16:41:41,002 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Entered Password
+2025-05-06T16:41:47,614 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Clicked on Sign in button
+2025-05-06T16:41:54,180 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Clicked on yes button
+2025-05-06T16:41:54,181 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Application is successfully opened
+2025-05-06T16:41:54,301 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Successfully navigated to Dispatch tab
+2025-05-06T16:42:27,442 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Behavioral Health checkbox selected successfully.
+2025-05-06T16:42:57,608 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Chemotherapy checkbox selected successfully.
+2025-05-06T16:43:27,764 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Dialysis checkbox selected successfully.
+2025-05-06T16:43:57,862 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Hospital Discharge checkbox selected successfully.
+2025-05-06T16:44:28,028 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Methadone checkbox selected successfully.
+2025-05-06T16:44:58,183 [main] MTMAutomation.DispatchTest.MTMDispatchTest - All filters successfully cleared.
+2025-05-06T16:57:03,506 [main] MTMAutomation.DispatchTest.Utilities.Base - Test Class Execution Start time UTC: 2025-05-06T11:27:03.500394500Z
+2025-05-06T16:57:25,722 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Entered Username
+2025-05-06T16:57:31,921 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Clicked on Next
+2025-05-06T16:57:38,028 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Entered Password
+2025-05-06T16:57:44,671 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Clicked on Sign in button
+2025-05-06T16:57:51,234 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Clicked on yes button
+2025-05-06T16:57:51,234 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Application is successfully opened
+2025-05-06T16:57:51,387 [main] MTMAutomation.DispatchTest.MTMDispatchTest - Successfully navigated to Dispatch tab
