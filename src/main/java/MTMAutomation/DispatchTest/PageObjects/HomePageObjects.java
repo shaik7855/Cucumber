@@ -4,6 +4,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,6 +18,7 @@ import MTMAutomation.DispatchTest.Locators.HomePageLocators;
 public class HomePageObjects {
     WebDriver driver;
     WebDriverWait wait;
+    Actions action;
 
     // Constructor
     public HomePageObjects(WebDriver driver)
@@ -24,6 +26,7 @@ public class HomePageObjects {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Initialize wait
         PageFactory.initElements(driver, this);
+        this.action = new Actions(driver);
     }
 
     //----------- Dispatch Tab --------------//
@@ -31,9 +34,11 @@ public class HomePageObjects {
     @CacheLookup
     private WebElement dispatchTab;
 
-    public void clickOnDispatchTab() 
+    public void clickOnDispatchTab() throws InterruptedException 
     {
-        wait.until(ExpectedConditions.elementToBeClickable(dispatchTab)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(dispatchTab));
+        Thread.sleep(2000);
+        action.moveToElement(dispatchTab).click().build().perform();
     }
     
     public boolean dispatchTabVisibility()
@@ -54,9 +59,12 @@ public class HomePageObjects {
     @CacheLookup
     private WebElement lyftTab;
 
-    public void clickOnLyftTab() 
+    public void clickOnLyftTab() throws InterruptedException 
     {
-        wait.until(ExpectedConditions.elementToBeClickable(lyftTab)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(lyftTab));
+        Thread.sleep(2000);
+        action.moveToElement(lyftTab).click().build().perform();
+        Thread.sleep(2000);
         try 
         {
             WebElement closeIcon = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//icon[@data-icon='close']")));
@@ -85,9 +93,12 @@ public class HomePageObjects {
     @CacheLookup
     private WebElement olosTab;
 
-    public void clickOnOlosTab() 
+    public void clickOnOlosTab() throws InterruptedException 
     {
-        wait.until(ExpectedConditions.elementToBeClickable(olosTab)).click();
+    	 wait.until(ExpectedConditions.elementToBeClickable(olosTab));
+         Thread.sleep(2000);
+         action.moveToElement(lyftTab).click().build().perform();
+         Thread.sleep(2000);
     }
 
     public boolean olosTabVisibility() 

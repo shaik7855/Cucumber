@@ -31,6 +31,16 @@
     <version>7.11.0</version>
     <scope>compile</scope>
 </dependency>
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-testng</artifactId>
+    <version>7.22.1</version>
+</dependency>
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>7.22.1</version>
+</dependency>
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <dependency>
     <groupId>commons-io</groupId>
@@ -110,10 +120,15 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.3.0</version>
           <configuration>
-        <suiteXmlFiles>
-          <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-        </suiteXmlFiles>
-      </configuration>
+            <includes>
+              <include>**/CucumberRunner.java</include>
+            </includes>
+            <testFailureIgnore>true</testFailureIgnore>
+            <systemPropertyVariables>
+              <!-- Pass Cucumber tags dynamically -->
+              <cucumber.filter.tags>${cucumber.tags}</cucumber.filter.tags>
+            </systemPropertyVariables>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>

@@ -28,8 +28,9 @@ public class StatusFilterObjects
     
     @FindBy(xpath = StatusFilterLocator.Parked_Pending)
     WebElement parkedOrPending;
-    public void selectParkedOrPending() 
+    public void selectParkedOrPending() throws InterruptedException 
     {
+    	Thread.sleep(2000);
     	parkedOrPending.click();
     }
     

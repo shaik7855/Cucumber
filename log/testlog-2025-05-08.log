@@ -1,0 +1,55 @@
+2025-05-06 16:19:40,865 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Test Class Execution Start time UTC: 2025-05-06T10:49:40.856580300Z
+2025-05-06 16:22:31,873 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Entered Username
+2025-05-06 16:22:32,061 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Clicked on Next
+2025-05-06 16:22:33,584 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Entered Password
+2025-05-06 16:22:34,284 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Clicked on Sign in button
+2025-05-06 16:22:40,543 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Clicked on yes button
+2025-05-06 16:22:40,544 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Application is successfully opened
+2025-05-06 16:22:43,242 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Redirected to Dispatch Page
+2025-05-06 16:22:45,699 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Test Class Execution Start time UTC: 2025-05-06T10:52:45.698970100Z
+2025-05-06 16:23:27,429 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Entered Username
+2025-05-06 16:23:33,610 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Clicked on Next
+2025-05-06 16:23:39,706 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Entered Password
+2025-05-06 16:23:46,294 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Clicked on Sign in button
+2025-05-06 16:23:52,843 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Clicked on yes button
+2025-05-06 16:23:52,844 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Application is successfully opened
+2025-05-06 16:23:52,997 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Successfully navigated to Dispatch tab
+2025-05-06 16:24:26,200 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Behavioral Health checkbox selected successfully.
+2025-05-06 16:24:56,358 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Chemotherapy checkbox selected successfully.
+2025-05-06 16:25:26,497 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Dialysis checkbox selected successfully.
+2025-05-06 16:25:56,631 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Hospital Discharge checkbox selected successfully.
+2025-05-06 16:26:26,795 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Methadone checkbox selected successfully.
+2025-05-06 16:26:56,977 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - All filters successfully cleared.
+2025-05-06 16:34:43,246 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Test Class Execution Start time UTC: 2025-05-06T11:04:43.236420400Z
+2025-05-06 16:36:19,142 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Test Class Execution Start time UTC: 2025-05-06T11:06:19.133798800Z
+2025-05-06 16:38:38,938 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Entered Username
+2025-05-06 16:38:39,123 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Clicked on Next
+2025-05-06 16:38:40,790 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Entered Password
+2025-05-06 16:38:40,958 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Clicked on Sign in button
+2025-05-06 16:38:46,147 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Clicked on yes button
+2025-05-06 16:38:46,148 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Application is successfully opened
+2025-05-06 16:40:19,110 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Test Class Execution Start time UTC: 2025-05-06T11:10:19.109943300Z
+2025-05-06 16:41:28,693 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Entered Username
+2025-05-06 16:41:34,884 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Clicked on Next
+2025-05-06 16:41:41,002 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Entered Password
+2025-05-06 16:41:47,614 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Clicked on Sign in button
+2025-05-06 16:41:54,180 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Clicked on yes button
+2025-05-06 16:41:54,181 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Application is successfully opened
+2025-05-06 16:41:54,301 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Successfully navigated to Dispatch tab
+2025-05-06 16:42:27,442 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Behavioral Health checkbox selected successfully.
+2025-05-06 16:42:57,608 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Chemotherapy checkbox selected successfully.
+2025-05-06 16:43:27,764 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Dialysis checkbox selected successfully.
+2025-05-06 16:43:57,862 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Hospital Discharge checkbox selected successfully.
+2025-05-06 16:44:28,028 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Methadone checkbox selected successfully.
+2025-05-06 16:44:58,183 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - All filters successfully cleared.
+2025-05-06 16:57:03,506 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Test Class Execution Start time UTC: 2025-05-06T11:27:03.500394500Z
+2025-05-06 16:57:25,722 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Entered Username
+2025-05-06 16:57:31,921 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Clicked on Next
+2025-05-06 16:57:38,028 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Entered Password
+2025-05-06 16:57:44,671 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Clicked on Sign in button
+2025-05-06 16:57:51,234 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Clicked on yes button
+2025-05-06 16:57:51,234 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Application is successfully opened
+2025-05-06 16:57:51,387 - MTMAutomation.DispatchTest.MTMDispatchTest -INFO - Successfully navigated to Dispatch tab
+2025-05-08 15:21:19,120 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Test Class Execution Start time UTC: 2025-05-08T09:51:19.111678400Z
+2025-05-08 15:21:24,129 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Test Class Execution Start time UTC: 2025-05-08T09:51:24.129446700Z
+2025-05-08 15:21:28,339 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Test Class Execution Start time UTC: 2025-05-08T09:51:28.339421700Z

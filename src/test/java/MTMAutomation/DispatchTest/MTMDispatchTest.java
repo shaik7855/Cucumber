@@ -671,7 +671,7 @@ public void verifyUserLogin() throws IOException, InterruptedException
 	}
 	
 	@Test(groups = { "smoke" , "regression"})
-	public void verifyTripReasonsFilter()
+	public void verifyTripReasonsFilter() throws InterruptedException
 	{	
 	//------------TC_16------------// 
 	HomePageObjects homePageObjects = new HomePageObjects(driver);
@@ -789,7 +789,7 @@ public void verifyUserLogin() throws IOException, InterruptedException
 	    Thread.sleep(1000);
 	    timeFilterObjects.ClickOnStartDate();
 	    Thread.sleep(500);
-	    timeFilterObjects.ClickOn1stApril();
+	    timeFilterObjects.ClickOn1stOfCurrentMonth();
 	    Thread.sleep(2000); 
 
 	    int countAfterDateRange = timeFilterObjects.getRecordCount();

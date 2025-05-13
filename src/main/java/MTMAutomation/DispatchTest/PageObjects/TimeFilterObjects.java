@@ -288,11 +288,11 @@ public class TimeFilterObjects
     
     // Method to Click on 1 st of april
       
-      @FindBy(xpath = "/html/body/div[4]/div/table/tbody/tr[1]/td[2]/button")
+      @FindBy(xpath = "//button[@class='pika-button pika-day' and text()='1']")
       @CacheLookup
       WebElement clickOn1stApril;
 
-      public void ClickOn1stApril()
+      public void ClickOn1stOfCurrentMonth()
       {
     	  clickOn1stApril.click();
       }
