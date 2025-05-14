@@ -37,3 +37,18 @@
 2025-05-14 11:20:29,531 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Applied Date Range filter with start date 1st April
 2025-05-14 11:20:29,627 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Appointment date is within the selected range
 2025-05-14 11:20:30,027 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - WebDriver session closed
+2025-05-14 14:12:18,041 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Browser selected: chrome
+2025-05-14 14:12:24,678 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Scenario Execution Start time UTC: 2025-05-14T08:42:24.677273600Z
+2025-05-14 14:13:07,197 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Navigated to login page: https://dispatch-test.mtm-inc.net
+2025-05-14 14:13:19,269 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Username
+2025-05-14 14:13:23,512 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Next after username
+2025-05-14 14:13:25,628 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Password
+2025-05-14 14:13:29,810 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Sign in button
+2025-05-14 14:13:33,996 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on yes button
+2025-05-14 14:13:34,000 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Application is successfully opened
+2025-05-14 14:13:37,115 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Successfully navigated to Dispatch tab: https://dispatch-test.mtm-inc.net/
+2025-05-14 14:13:37,129 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Dispatch tab URL is correct
+2025-05-14 14:13:41,592 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Successfully navigated to Lyft tab
+2025-05-14 14:13:43,619 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Lyft tab URL is correct
+2025-05-14 14:13:48,136 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Screenshot taken
+2025-05-14 14:13:48,816 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - WebDriver session closed

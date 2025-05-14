@@ -4,6 +4,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
@@ -19,9 +20,12 @@ import org.testng.Assert;
 import MTMAutomation.DispatchTest.Locators.Locators;
 import MTMAutomation.DispatchTest.PageObjects.*;
 import MTMAutomation.DispatchTest.Utilities.Base;
+
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.OffsetDateTime;
@@ -69,7 +73,19 @@ public class DispatchTestStepDefinitions {
     }
 
     @After
-    public void cleanup() {
+    public void teardown(Scenario scenario) {
+    	 if (scenario.isFailed()) { // Capture screenshot only on failure
+             try {
+            	 String scenarioName= scenario.getName();
+                base.captureScreen(base.driver, scenarioName);
+                // Attach the screenshot to the Cucumber report
+                File screenshotFile = new File(System.getProperty("user.dir") + "/Screenshots/" + scenarioName + ".png");
+                byte[] screenshotBytes = FileUtils.readFileToByteArray(screenshotFile);
+                scenario.attach(screenshotBytes, "image/png", "Screenshot");
+             } catch (Exception e) {
+                 e.printStackTrace();
+             }
+         }
         base.tearDownDriver();
         logger.info("WebDriver session closed");
     }
