@@ -29,13 +29,13 @@ Feature: Dispatch Application Testing
     When the user clicks on the burger icon
     Then the details panel should be displayed
 
-  @verifyAllColumnsVisible @regression
+  @verifyAllColumnsVisible @regression @smokesuite
   Scenario: Verify All Columns Visible (TC_10)
     Given the user navigates to the Dispatch tab
     Then the Time Left column should be visible
     And all expected columns should be displayed
 
-  @verifyNavigationBetweenTabs @smoke @regression @smokesuite
+  @verifyNavigationBetweenTabs @smoke @regression 
   Scenario: Verify Navigation Between Tabs (TC_03)
     When the user navigates to the Dispatch tab
     Then the Dispatch tab URL should be correct

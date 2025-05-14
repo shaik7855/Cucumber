@@ -1,0 +1,101 @@
+2025-05-13 11:01:38,835 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Browser selected: chrome
+2025-05-13 11:01:42,736 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Scenario Execution Start time UTC: 2025-05-13T05:31:42.736339700Z
+2025-05-13 11:01:43,687 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - WebDriver session closed
+2025-05-13 11:03:00,291 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Browser selected: chrome
+2025-05-13 11:03:03,268 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Scenario Execution Start time UTC: 2025-05-13T05:33:03.267680900Z
+2025-05-13 11:04:05,476 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Navigated to login page: https://dispatch-test.mtm-inc.net
+2025-05-13 11:04:12,652 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Username
+2025-05-13 11:04:18,923 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Next after username
+2025-05-13 11:04:22,012 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Password
+2025-05-13 11:04:28,195 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Sign in button
+2025-05-13 11:04:34,866 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on yes button
+2025-05-13 11:04:34,868 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Application is successfully opened
+2025-05-13 11:04:34,982 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Successfully navigated to Dispatch tab
+2025-05-13 11:04:37,391 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - WebDriver session closed
+2025-05-13 11:10:59,499 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Browser selected: chrome
+2025-05-13 11:11:01,583 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Scenario Execution Start time UTC: 2025-05-13T05:41:01.583443800Z
+2025-05-13 11:11:57,353 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Navigated to login page: https://dispatch-test.mtm-inc.net
+2025-05-13 11:12:05,939 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Username
+2025-05-13 11:12:12,131 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Next after username
+2025-05-13 11:12:15,231 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Password
+2025-05-13 11:12:21,408 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Sign in button
+2025-05-13 11:12:27,611 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on yes button
+2025-05-13 11:12:27,612 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Application is successfully opened
+2025-05-13 11:12:27,752 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Successfully navigated to Dispatch tab
+2025-05-13 11:12:33,848 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Applied Parked/Pending filter
+2025-05-13 11:12:33,891 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Parked/Pending filter applied successfully
+2025-05-13 11:12:35,955 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Applied Reassigned filter
+2025-05-13 11:13:06,018 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Reassigned filter applied successfully
+2025-05-13 11:13:08,095 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Applied Trip Bidding filter
+2025-05-13 11:13:38,142 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Trip Bidding filter applied successfully
+2025-05-13 11:13:40,223 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Applied All filter
+2025-05-13 11:13:40,253 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - All filter applied successfully
+2025-05-13 11:13:40,663 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - WebDriver session closed
+2025-05-13 12:11:47,497 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Browser selected: chrome
+2025-05-13 12:11:51,416 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Scenario Execution Start time UTC: 2025-05-13T06:41:51.415992800Z
+2025-05-13 12:12:24,826 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Navigated to login page: https://dispatch-test.mtm-inc.net
+2025-05-13 12:12:32,512 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Username
+2025-05-13 12:12:38,740 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Next after username
+2025-05-13 12:12:41,851 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Password
+2025-05-13 12:12:48,064 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Sign in button
+2025-05-13 12:12:54,273 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on yes button
+2025-05-13 12:12:54,275 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Application is successfully opened
+2025-05-13 12:12:56,869 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - WebDriver session closed
+2025-05-13 12:14:12,572 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Browser selected: chrome
+2025-05-13 12:14:15,538 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Scenario Execution Start time UTC: 2025-05-13T06:44:15.537602700Z
+2025-05-13 12:14:37,330 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Navigated to login page: https://dispatch-test.mtm-inc.net
+2025-05-13 12:14:45,589 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Username
+2025-05-13 12:14:51,794 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Next after username
+2025-05-13 12:14:54,886 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Password
+2025-05-13 12:15:01,044 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Sign in button
+2025-05-13 12:15:07,245 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on yes button
+2025-05-13 12:15:07,246 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Application is successfully opened
+2025-05-13 12:15:09,826 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - WebDriver session closed
+2025-05-13 12:19:37,717 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Browser selected: chrome
+2025-05-13 12:19:40,094 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Scenario Execution Start time UTC: 2025-05-13T06:49:40.094911900Z
+2025-05-13 12:20:35,513 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Navigated to login page: https://dispatch-test.mtm-inc.net
+2025-05-13 12:20:46,281 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Username
+2025-05-13 12:20:52,481 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Next after username
+2025-05-13 12:20:55,574 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Password
+2025-05-13 12:21:01,738 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Sign in button
+2025-05-13 12:21:08,332 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on yes button
+2025-05-13 12:21:08,334 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Application is successfully opened
+2025-05-13 12:21:10,984 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - WebDriver session closed
+2025-05-13 12:22:17,408 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Browser selected: chrome
+2025-05-13 12:22:19,771 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Scenario Execution Start time UTC: 2025-05-13T06:52:19.770458100Z
+2025-05-13 12:23:02,824 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Navigated to login page: https://dispatch-test.mtm-inc.net
+2025-05-13 12:23:13,486 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Username
+2025-05-13 12:23:19,679 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Next after username
+2025-05-13 12:23:22,780 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Password
+2025-05-13 12:23:29,014 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Sign in button
+2025-05-13 12:23:35,203 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on yes button
+2025-05-13 12:23:35,205 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Application is successfully opened
+2025-05-13 12:23:37,435 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Successfully navigated to Dispatch tab
+2025-05-13 12:23:39,868 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - WebDriver session closed
+2025-05-13 12:25:55,541 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Browser selected: chrome
+2025-05-13 12:25:59,196 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Scenario Execution Start time UTC: 2025-05-13T06:55:59.195922600Z
+2025-05-13 12:26:29,653 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Navigated to login page: https://dispatch-test.mtm-inc.net
+2025-05-13 12:26:40,019 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Username
+2025-05-13 12:26:46,236 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Next after username
+2025-05-13 12:26:49,313 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Password
+2025-05-13 12:26:55,927 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Sign in button
+2025-05-13 12:27:02,126 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on yes button
+2025-05-13 12:27:02,129 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Application is successfully opened
+2025-05-13 12:27:04,375 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Successfully navigated to Dispatch tab
+2025-05-13 12:27:06,426 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Time Left column is present
+2025-05-13 12:27:06,714 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - All columns are correctly displayed: [Appt. Date, Plan, Member, Member ID, Trip #, Status, LOS, Distance, Transportation Provider, Trip Reason, Pickup Address, Pickup City, Pickup State, Pickup County, Pickup Zip, Destination Facility, Destination Address, Destination City, Destination State, Destination County, Destination Zip]
+2025-05-13 12:27:07,073 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - WebDriver session closed
+2025-05-13 12:44:35,367 - MTMAutomation.DispatchTest.Utilities.Base -INFO - Browser selected: chrome
+2025-05-13 12:44:37,416 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Scenario Execution Start time UTC: 2025-05-13T07:14:37.415217800Z
+2025-05-13 12:45:22,926 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Navigated to login page: https://dispatch-test.mtm-inc.net
+2025-05-13 12:45:32,690 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Username
+2025-05-13 12:45:36,902 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Next after username
+2025-05-13 12:45:39,011 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Entered Password
+2025-05-13 12:45:43,219 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on Sign in button
+2025-05-13 12:45:47,804 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Clicked on yes button
+2025-05-13 12:45:47,806 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Application is successfully opened
+2025-05-13 12:45:50,047 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Successfully navigated to Dispatch tab: https://dispatch-test.mtm-inc.net/
+2025-05-13 12:45:50,054 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Dispatch tab URL is correct
+2025-05-13 12:45:54,359 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Successfully navigated to Lyft tab
+2025-05-13 12:45:56,380 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - Lyft tab URL is correct
+2025-05-13 12:46:01,062 - MTMAutomation.DispatchTest.stepDefinitions.DispatchTestStepDefinitions -INFO - WebDriver session closed
