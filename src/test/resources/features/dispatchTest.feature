@@ -35,7 +35,7 @@ Feature: Dispatch Application Testing
     Then the Time Left column should be visible
     And all expected columns should be displayed
 
-  @verifyNavigationBetweenTabs @smoke @regression
+  @verifyNavigationBetweenTabs @smoke @regression @smokesuite
   Scenario: Verify Navigation Between Tabs (TC_03)
     When the user navigates to the Dispatch tab
     Then the Dispatch tab URL should be correct
@@ -164,7 +164,7 @@ Feature: Dispatch Application Testing
     When the user applies the Trip filter
     Then the Trip filter should be applied
 
-  @verifyTimeFrameFilter @smoke @regression
+  @verifyTimeFrameFilter @smoke @regression @smokesuite
   Scenario: Verify Time Frame Filter
     Given the user navigates to the Dispatch tab
     When the user applies the 0-6 hours filter
